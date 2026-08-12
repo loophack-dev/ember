@@ -70,6 +70,10 @@ The built-in layout uses basic furniture (desks, chairs, plants). For the full 4
 npm run extract-furniture
 ```
 
+## Support
+
+If watching your agents wander a pixel office made your day better, a [⭐ star](https://github.com/rolandal/pixel-agents-standalone) keeps the office lights on — and star [the original](https://github.com/pablodelucca/pixel-agents) too.
+
 ## Credits
 
 - **[pixel-agents](https://github.com/pablodelucca/pixel-agents)** by Pablo De Lucca — original VS Code extension (MIT License)
