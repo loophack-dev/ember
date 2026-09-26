@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7d8afcbcd5469fb701caca2e47abc08c840ef5ab04c50c373af6385792949ac4",
+  "claims": [
+    {
+      "id": "claim_e1e40fd9cc45464fa3c7c2ce81452f6e",
+      "statement": "Pixel Agents Standalone is split between a Node server that watches and parses Claude session JSONL files and a React/Canvas UI that visualizes agent activity; the standalone fork uses an Express and WebSocket server instead of the upstream VS Code extension bridge.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L12-L18",
+          "version": "repo-lines-v1:sha256:5a6045da4d657f8f71d3e782026dbf9170096099127a68a5f1532457b2b22d2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmYjY0MDY0ZDEwZDBlZThmYzk0ZGY5Zjg5YmI0ZjNkODNiN2EyMzhmYzEyYmFjYWM1NTc5OTVkOTIwMTJjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRjOTYwYTFjNTc4YjQxZGRjZWFjNDdkNTRhNmRhOGE4Y2JmOGJiZjE3ZGJmZjE3Y2E3MDVhNmY3YmI1ODVmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E1YTZkNWQzODllMWNkYmY5Y2NlN2JiNTgxYzI1YzUwMmRlYTk3YTExY2YyYzk4ODM0NWM3NzVmZDk1NWE3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFiODhkOWY3MDVlNzc2MjVkZjk2OGUwNGM5ODYxNDhlOTM1NWNkNmI4OGMyOTgyOTU3MWE4ZmM3M2VkZjlkZSJ9"
+        },
+        {
+          "resource": "repo://README.md#L58-L63",
+          "version": "repo-lines-v1:sha256:d3442958cf5aac286571975c4b140a0ebf9040ee092b2899d1ae2cc5cebbb414:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTEwNTFiZGUyY2MyM2MwN2JkNDk1MWIwZmEzYjdjZTM4YTI5ZGExMjk0Mzc2MDZjMmQ1ZTA1NjM1NDYxNWY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY0ZmYzY2Q1ODQ3ZjExM2NiYzM4MjIwOWRkYjIzNjc3NTY3MzllN2Q4YjkxOTVmZWY4NWFiMjNhM2U3MDA4NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE3YzE0OTEyYjgxMGNhMjgzYjk0OWMzNmRhMGIxYzgxZGU4ZDczODZjYzE5NzkzZDE4MDk0NjdkZTVmNDU4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBjZWZiZDc4NjBjMGEzNWZkNDkzYzgzOWI0NTE0ZDg4NzZiOGE1MmI1NTIxYjUxNTg4OGIzZjdjZjE0YTM4YyJ9"
+        },
+        {
+          "resource": "repo://server/index.ts#L1-L17",
+          "version": "repo-lines-v1:sha256:970b271a31d4c0331ae7db8bfda5c0a1bfe3557d4e82aa5a1e3e48db656ff060:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNTAxODVmOGViZTgzY2Q4YzVkNGZjZWNiNWUxNzMwMzU0ZGViOThlYTkxOGEwMWQxZDU4NjQwN2Q0ZTA1Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzODRkY2M2YWVjZGNkZDBiMDExNjA2ZWI3NmZlMzU4NDgyYzhlMTAyMzUwNjE1NzIwNGUyZWQyMWRjMTBhNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhOWExYzc2OTU2MGU1Zjc0NzEyN2RjODIwYmQxOTM4NDljYWM4NTg5YWY3YTk1N2Q2NThmYjg3NzcyMGQxNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f41238fd1554bb396a9b68ed5fefce7",
+      "statement": "Development requires separate root and `webview-ui/` dependency installations; the documented production path builds the application and runs it with `npm start`, while development starts the Express server with hot reload and Vite concurrently.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L20-L29",
+          "version": "repo-lines-v1:sha256:d9a5926f6e501a9207dc777d39a8aa35ec954a5c2ad5b0a7223a036fcc5d9525:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOWE0OTAwZTI5MmM0NTU0YTQwNTliOWRkMThmOTY1YzgxYzJmMWUxMmZjNDhlODY4MmFlMzI2MzAyOWNiYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViN2NlZTYwMzE2MmY2OTAyOGI2ZTcwOWJhYWYzMzliY2VkYjllMThmMWMzM2IzZTljNTAzMzYxN2QwNzNhNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZGMzNTYyMzczODAxZWQ2OGE2NDI1MTRjMmVhZGU3NzA5MGI2YjVkYjgxMTkwNTdiZmY0MzE0OGMyNDQzY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkY2IxYWM0YzMyNzBiZDI5Y2U0ZDhlMjljZTNlMTc5MGJiNzAyMzgxOTY2ZjRlZjYxMGIyNDY1NzRhNmI4ODUifQ"
+        },
+        {
+          "resource": "repo://README.md#L50-L56",
+          "version": "repo-lines-v1:sha256:a7321f3a8e925a6429e2a31f1052390e0c3d8d1ff7480f689d71d5b4e06778b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjNhMTY1NTViNmRlYWRkMjYwY2E3MmM5MmJkNzQ2ZjZiMGM4ZjY4YmIxNjlkYWRjNDUxYjc2NTE0YjIzYmQ2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGFlNjBjMzM3MjU5NjE1NTIyOWJjYjM1MTBjODcwNTlhMzU5NjBkZmUyOThlMGQzZjY5NGUxOWRiMGUwODFiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTRjYjA5MGQ5MzE2MTY1ZTQyYTJkMjQ1YzI4NzQ2ODlmZTE3MDk4OGRhODIyNjQyYWY2MTg2MTYxMzY3ODA1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdhNzU3OTk3M2ZiMDZkZGEzZjcwYzIyMzhjNDIxYTFlMDBkZjE2MjEwZGUzMjY3ZGJhYTgyZDRhZTZmNjJkYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b915ecdd7396497fbd4c0b19b8391c88",
+      "statement": "The server listens on `PORT` or `3456`, serves production static files, and initializes a WebSocket server on the same HTTP server; the development UI socket target is hard-coded to `ws://localhost:3456`.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L19-L21",
+          "version": "repo-lines-v1:sha256:457a6de05406c27bad68ee96b710d3cd13abf98011fda9c8947d4fbebaec4946:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc5OWRkZDRjYzdkMWI5OTY5ODc1OGEyZDRjNDAzOWExMjI4NDdjZGVhODdlZDI1YTM3NTQzOTdmYzg4ZjJmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQ5ZTc2MmFjNDM3Nzc5MTM5OGE4ZmMwM2M2ZGQxYzNjZjU3MGNjMGRkMjEyY2JhZGVmNGNiMGVmOGJmNGI4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmUzNjk1ODg5MjI4ZTJlZjNhMWM5YjQ1NjllNDhmYWQ4ODdhNzE5YWQ5Zjc4NDM2ZjJiZWQ2ZGUwNjM5MjMxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTMwMzM1YjFmN2I0ZGI2ZDY0OWI4OGFjMDc3ODIzN2VmZTFjMjU0ZjE3MTUzYmMzZGJmZGVhODQ0NjlhODA2YyJ9"
+        },
+        {
+          "resource": "repo://server/index.ts#L253-L258",
+          "version": "repo-lines-v1:sha256:387bc80fbfff3b52bad6a319e0768a092e02141bf73287567b3cc83f4e848b3d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVmNGJiM2U3NTQxODBlNjgzZWYyMTc5NGVjMDNkOTFiZGQ4OGVlODRlZDZkZjA3NDMzYTNjZTc0ODQ0YWE4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTBjYzQzZWI2NWY2Y2ZjODVkOTlhZDhjNGIxZGRhNTBlZWM2ZTlkNWUxODE4ZDk4NWZjMDRiMDA5YTJhYmZiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmJkMzZkOThkOTk3YTQzNTdjNmFjOTRjNTdlYjUzMTBhMjliNGQ5ODI0YTQ5OTJhNjRkZGFlZGFiOWZlMTdhYiJ9"
+        },
+        {
+          "resource": "repo://server/index.ts#L78-L86",
+          "version": "repo-lines-v1:sha256:0fc93424b2f89ac90865a49e3b7aa77ba4963350a511661a50a2e98f92daa304:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE2MjIwMzUyMmFhYjQyMWZiN2QyMTk0NzZjMDQwOGIzNzA3ZjdhOWEwZDRkYzI1ODQ3MDI0NGQ2OWRjYzI5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDE1MjNlNDE5NzkxMjkxMjNlN2I0OGQ4ZDE3NjBiOWM4MWQyNTg5OGExYjM4ZDA2OGQxNzI5ZDczNjRlNTk3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJiYzg1NGMwY2QwZDA1ZjgzNGY0MDcxMzk5MDVkZmVjOTFjYjVhNzc5Zjg0ODBmZGRkYzc0N2JkZmNkNzg4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGVjYjhlMDlkOWQzNWZiNWIwMzJiNzliMjgzN2NmZDM2ZTM4NmU5MTA4NzNjMTQ0ZDAzNjYwMmEwNGYxZWU3NCJ9"
+        },
+        {
+          "resource": "repo://webview-ui/src/wsApi.ts#L1-L14",
+          "version": "repo-lines-v1:sha256:cade25ccb5bbcd6c9dd8c15ca84cd389e04779daa1fcb926d972f3182aa8affe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjODE3M2VlOGZmZjdiM2RmOTc1OGQyMTM4NzQ4MmJlNjNjZTllOWI5NGYwYzkzMzIxZTRkMmUyZjllOTg0N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZjI3MTE1ZTIwMDZkOWQ1ZDE3MzZjZDRlNzg5ZTM4MWRlNGU3YWY1ZjdlNGU5ZjNjMzQ5NDRkNjc0YmI0NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZmE4MDc3ZWY4ZDg3NWZjOGY1NWZlNjRkN2JiMDlhMzczNjdhNjk4NDlhMWMyMWMwZGY2ODAxYTZhNWM0YTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be5c08d7b0d94f329a02e02683d42ed7",
+      "statement": "Initial WebSocket synchronization is triggered by `webviewReady` or `ready` and sends settings and available assets before `existingAgents`, followed by `layoutLoaded`; this ordering lets the UI establish its layout after receiving agent metadata.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L111-L162",
+          "version": "repo-lines-v1:sha256:4ba60cb05c9952e53fbecb49447a3516bec5e254429d8fc2a1d996c092a5fe5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMTJiYzgzYjQ0YmUzMTA1MzIzMjk0YjczM2E4NzE1ZmZjOTgxYTY4ZGIzNjNjM2I2N2FiOTI2NTI3YzI1NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjM2I0ZjcyNWJhZjIyYzc1OWJiNTk2YjE0NWQ5NDQ5OTUwYmRmNjMzNWQyYWRlZDM2ODdmNzNlYzlkMzU2MjkifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L169-L199",
+          "version": "repo-lines-v1:sha256:335dab4de3313e258370e1419ac7ad5c8710af85c56893d57882ca0765c0a687:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMWZjZDdiM2Q1MGRhNzY4YjQ3ZDkzYTExZjQzZjEzZjcwMDYxZjVlYmY3Y2E2MzJhNTFkNjY2MzBhNjdhMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5Njg4OGM2NzNmMTUzOGIzNWZmOGQzOWFjMWQzOWRjODcyYWZlMzNlYmZiZTZjYmY5MzMzNDA4NjNlM2M1NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNmU4MDQ0MGJlMzA5MTgxOGI3NzdiNjRmY2ViYWE2ZDJmOWRiNzlhZTQ5NDI2NzVkNmExNzE4ZTg2M2U2ZTcifQ"
+        },
+        {
+          "resource": "repo://server/types.ts#L31-L59",
+          "version": "repo-lines-v1:sha256:75e970ae14a7f228fe404b37f8c96525a040334a33b8c777a943a1bf5b11d4e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNjlhNDM0ZjRlYTExN2U0NzU1MjI5NDE3ZmY0Yzk4YTg4NjRjMjYxMTQ1N2UxZjcyN2Y3MjRhMjliMDFhMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4YWM3YzFlNWE1MDFjODAzMWJjYTUxOGZiOTZlZmM2YjNkZmNiYjE2NjRiNTZiOWFjZjQzMGJjYWI4ZGMzYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMzVmMWNjMjk4MzNhZjNjZGNiMDEyZTYyZTAwNTg3MzFlZDg3OGNhYTY3ZDQ4NGY5YTA4NTMwZjk0YWM5NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c66d9e8444be4f919a595c94176ffebe",
+      "statement": "The server owns an in-memory session-to-agent map and connected-client set, persists layouts and agent-seat metadata under `~/.pixel-agents`, and saves a layout by updating in-memory state and broadcasting it only to other open clients.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L174-L195",
+          "version": "repo-lines-v1:sha256:bddd0b866bc03141f2bcd22eccfc6106cfef2c3871f770b5d94d2a04e327653a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NTY5YzU4N2UxOTFlODI0ODQxMjllNDY0MjQzZjhiOTQwNTY1Yjc2NGYxOWQ2N2YzMDJkNWFhYTE5NTkyNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NGRhMGMxOGE3OTc5Y2U5YzQ5MTk3NzE5M2RiZDZmODE5MzUyNDg5Y2QyN2YzZDQ2ZjY5MGExMzU1M2ZlMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMzVhYjFiNDBmNjUwODU5YjcyNDI4ZTNlZjcwNDJhZDQ4MWYzN2U0MTczOGNmMTUzYTUzZjE1ZGQzN2E1OWYifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L205-L251",
+          "version": "repo-lines-v1:sha256:fa410eb8b63cc76232b8540a1f4a537f519b9d868cd515067c9d2c424be549e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmY2I4NGU0ZDQ3ZDc1MzdiZGU1MDkyMjM2M2JkYWQ2YWVkM2UyMGJhZTQ1NTA4NzdmZGM2MGIzMzg5NWVjNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5YTBhYzA5NmU2ZTZjMThiZmI5MTlhZDZjMmIxMDAzMDQyOTUyNDhiZTA3ODM2MWY3ZDZhMzYwOTBkODdiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwM2MxZGQwYzBiYzNhNWE4M2VkZmUzYzk0NTM4ODZhNDZhNjZiZTkzZDI1ZjE3ZWU2Y2U3MWQ5N2ExODcyZWUifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L23-L27",
+          "version": "repo-lines-v1:sha256:05cf18c0f0c1872d6c2df75a327fdce61acd85992e0e1b0b30ae0935697ee4cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBkZGI5ZjU4N2IyNWY5NzI2NTRjMjQ4ZDExZmU4OTJhYjUyNzJkMWQ3YjNiMmQ3NzhkZjA1NDY3OGVhNWY2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQyNzdkYTAwZDNkNWU5ODA0MzVmOTU0M2Y1Yzg4ZTZiMWRlY2ZkOTljMjFkYzRmY2NjNDcwNjZlYjhhMjZiMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQxZTEyOTA1NzczNWMzNTEyMjE2NTE1OGY1YmY4MWY4MjBkOWI5YTM2MGM1M2NjMDMxZDFlZGE5ZTAyYTkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdjMDRjNmE2NTkyNGE1MmZhYjI2YWU5NDk3OGQ1YjI4M2I2ZThmMjkwMzAzZTQwYzZhM2YwNjNmMGIzMzRhZiJ9"
+        },
+        {
+          "resource": "repo://server/index.ts#L43-L76",
+          "version": "repo-lines-v1:sha256:7f5eff686f62330e2eee12f8db5965696037afc6e741bd521d1d9969649ada02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYjBkYmFmODE4NTU0NzJjNGJhMThjYzk2YWEzNDc1OTg5ZDhlM2YzOTU4ZGVhNzc4NDdjNzg3ODc5NDVlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTNiMWIyMWUxYTdmOTE0OGE5MTIzNTY4NjhiOGRlYzY1NmUyMWQ5NmFhYThkMzhhMWZhOGEwNzViZWRiNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OGE1MzA2ODBmNDgwYzUwNzJjOGFlYjBiZGJhYzE1MjVhODAwZTc0YmUyODJhZDRkZDc4MTRjMDlmMjFlYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MTkwMzlmMjhiMmEyNDA2M2EyZTI1YzNkMTlhNWM2YzZmYzg5ZWM0OTdlNDI0ZTBhYmQ4Y2JjOGJjYmQ3YzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ec9e665b45a4f5db82646cfc9e960fd",
+      "statement": "JsonlWatcher initially adds only Claude project transcript files modified within ten minutes, catches up each added file from offset zero, polls tracked files every second, retains an incomplete final line until a newline arrives, and emits removal when a file is stale, missing, or unreadable.",
+      "evidence": [
+        {
+          "resource": "repo://server/watcher.ts#L24-L44",
+          "version": "repo-lines-v1:sha256:1ad428b366777c23b07ed364f3b4acc84a7176626c6644f79fd354a2e8dd108a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwOTM4NDI1ODdlNGZkYWIyYzdmYTBiNzE4OTczMzFmYjg3Mzc5YTk1YTc4MjZhZTlkYjU5NTQ4MjhmZTY5NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNWZmNjA1MmQ5NDAzMWU4YWJiNzQ4MjYwYTVlODJkODAyODU4ZjBmNDM3N2MyZThlYjZhZGMwODViNWVkMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZWFmZTY0MmJkNTNlYmQ5N2I0YTJiNjIyM2MyODRiOTQ2OGQ1MTUzMTU3N2QwYTM2YjBmNzNlMjc3MDRhMWIifQ"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L46-L68",
+          "version": "repo-lines-v1:sha256:f6f1dc846cfca492b553b6ab203e90ece32bbe45550743f35be7ae929290691c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ODMyYWVmNjJhMGY0NTg1ZDk0MWVlMmEwNDIxNDljNjZlMDgwMGIyZWQ4OGQ4NTFlZDY1ZjNlMjk4OWE2MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2NzIwYTVhZmI5M2EwYWY0YjUzYTBkYTYzMjg1Y2IyZmRkNDdjZWE0NmUzYWY4Yzk3YTMyOTBmNjkyM2UxNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZGUyZjBhMmYxZDA5NGM5OTk3NDQ3NzRhNmU2MTAxZmEzNmE1NWZjZjczNWRmNzJkZjllYzIzNjkxNDUwODgifQ"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L7-L9",
+          "version": "repo-lines-v1:sha256:d112a06ebd9e14a3ae41c62ed892dc228d344836f9b06f4efef7dd11caa88a81:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUyMzAwZGRiN2NiZTZlN2I3Mjk2YmE0YmZhOTIxMmE0YmZiNWNkMDZmN2M0MDE2NjdkYzI1ZTg5YzM2NGRmNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ1YjdiNTk2MzE1YWUzODNjZGIxNWFkYzU1ZmQ2ZjY4MzgyZmVmYjcyODQwZjU2YWUxZjBiM2QzMThiM2JhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NiZjA1ZGI4ZjI2YmNmNWU4NjJjZDYzZjYyMTg1OWNmYzg1MWRjNTI4ZGRiMGU1NzY1YTVjNWVhZjg3MjQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQyYmJhMjI2YTBhMjNiYTdkNWU5YmQzNGU1ZTMzMmRiMDY3ZWFhYWRjOTQ4NzdmZGUxNTIwMTQ4NjE2MWVjYyJ9"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L71-L139",
+          "version": "repo-lines-v1:sha256:a03c063e0008e775831a77c3114f51442c986138c299cd8c9bdb2820f4204eff:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGZhYTQ4NjZjNzczZGUxNGFlNjY4ZmMyMWMzYWMxZmE1OThiOWE3ZmJiZDMzZmE5NzIzYzkyZTZjZDBlZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkZjU0MzRiMTljMjgxODNiYWEyNmZjNmE3OWY3MTc5NjU1YmY1ZTI5ZDhjMDMxYjA2MDgyN2Q2NmNlNzIyNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_017e3ea0898746e48a891b9d6d63252f",
+      "statement": "The parser turns transcript records into agent lifecycle messages, uses timers for waiting, permission, and idle behavior, tracks parent and Task-subagent tools, and ignores malformed JSON records.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L162-L211",
+          "version": "repo-lines-v1:sha256:300c4f706e488c54307baded7286a5562d111d91d647976e6ae616d627a35450:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNjExYjc4NTZkYjg1NDBhMzQ1YWYxNThjMDVmZWU4Y2M4ODlmZWNhNzE4ZGQ5YTE1OWFkMTE0ZmM4ZWU4ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMTQ0ZTIzMmZlYzhlYjRmNTFlMzQ2MGFmZmQ2NDE4Y2YyMmU0NzAwMGE4MWQ4MGYyOTE4ZWE3Y2I1OWQzMGIifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L271-L390",
+          "version": "repo-lines-v1:sha256:f8e97fa63f0c105900557b5f81a5a92b427bbd0e57a5aee3addd3c4488852dc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0ODM4OTg1OTMwNjg3NDg1MWVkZWQ4ZTZiYmQ3NjNkNThhMGI3ZWZhZWI4YTE3MmI0NTE4NjY0ZGI4NGRjOGZlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmYjU4MGU5NjRmODNhNDczZjQzZDQ0Mzg0NjI5NDlkNjhiNTYwMGZkYTc4N2YxNjM3NDVkMDBkZTg5Y2JmMzZhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0NzNjNjcwODUxYjM1N2I5MzNkYTEwNDZhNTVjN2Y4NGFhZjQwMGUyZGFhYzdiNWEzN2E1Njk0N2FiZWVmNzRiIn0"
+        },
+        {
+          "resource": "repo://server/parser.ts#L4-L17",
+          "version": "repo-lines-v1:sha256:010ffd46bed1068517876825449dceca1cf0b4190529d3a66d2695312aedf318:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMmFiYWQ3ZDNiYmExN2QyZmNkMTAwZmVhMTllMzkxZTMyMzdmNDg0ZGU3ZGE1NDQzYTRkMTJkNWI5NTJiMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2NTMwYzA3NjJmYTQwM2Q1YzU4N2VlMTQwOGQwNzNjMWJhNzNiYjZmNTdmMGUzMGM0MGNmNWVmYjE1MDJlODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1YTBkZTU3YmRmNWY1ZTFjODEwNzQ1ZjM0YjNlYzY0YjhkMDAzMWE5Mzk0ZjRkZTllNWRlZDZjYmE3Y2JkYjAifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L64-L160",
+          "version": "repo-lines-v1:sha256:9fe5fdbe8f204fbc60de7ff75f8fcf8da90e89d286b6b71d7232aec2aa56b028:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3M2VhMzQ5ZjE0MTM0ZmQzZDBmOTFkODc0OGE2N2M3OTM5NjNkODk4NWNlMTc5N2MwMDBlMDZjZWFiMjhmNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZTQxOGY4ZjgyNjRlNmY5ODMyNjczZjM3NWM5NGFiMDJlN2MwNTdlNTZkOTAxMjJkNTAyNzAzNmYwMGNhZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba021aa8c6a34b10bcf9f51debca5251",
+      "statement": "The browser WebSocket adapter dispatches each parsed socket message as a browser `message` event for the inherited UI hook, reconnects two seconds after close, and drops outbound messages unless the socket is open.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/wsApi.ts#L9-L39",
+          "version": "repo-lines-v1:sha256:47eaa4ee7cfb6e9e98f615c8fccd6882b460155fb90df11b07876855303330f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmI1ZmE5Mzc1MDk3MjUzNzk2OTdhN2UwNjk5ZDg2MzZkYjJjZjJlMmE5ZDhhMDIxNzE4NDdlZGQxZTA4NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwZGM1ODZhOWJiNmQwN2YwYjdmOTY3ZDM1NjQyZDVjYTMzYWU2NzlkZmNkM2M4ZjA4NTIyOGUxMTAyZjU4MWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NzA1Y2I1OWE2ZjVjZWNhZTE4YTgxZjQ1MWIwNmI1ODNiODg2MmZmNGFiNDQwYmQ4ZWZiYWRmYzc5YTMzZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T16:48:54.278Z"
+  }
+}

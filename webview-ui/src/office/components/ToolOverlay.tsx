@@ -4,6 +4,7 @@ import type { OfficeState } from '../engine/officeState.js'
 import type { SubagentCharacter } from '../../hooks/useExtensionMessages.js'
 import { TILE_SIZE, CharacterState } from '../types.js'
 import { TOOL_OVERLAY_VERTICAL_OFFSET, CHARACTER_SITTING_OFFSET_PX } from '../../constants.js'
+import { statusDot } from '../statusDot.js'
 
 interface ToolOverlayProps {
   officeState: OfficeState
@@ -13,31 +14,11 @@ interface ToolOverlayProps {
   containerRef: React.RefObject<HTMLDivElement | null>
   zoom: number
   panRef: React.RefObject<{ x: number; y: number }>
-  onCloseAgent: (id: number) => void
-}
-
-/** Derive a short human-readable activity string from tools/status */
-function getActivityText(
-  agentId: number,
-  agentTools: Record<number, ToolActivity[]>,
-  isActive: boolean,
-): string {
-  const tools = agentTools[agentId]
-  if (tools && tools.length > 0) {
-    // Find the latest non-done tool
-    const activeTool = [...tools].reverse().find((t) => !t.done)
-    if (activeTool) {
-      if (activeTool.permissionWait) return 'Needs approval'
-      return activeTool.status
-    }
-    // All tools done but agent still active (mid-turn) — keep showing last tool status
-    if (isActive) {
-      const lastTool = tools[tools.length - 1]
-      if (lastTool) return lastTool.status
-    }
-  }
-
-  return 'Idle'
+  onEditAgent: (id: number) => void
+  onMoveAgent: (id: number) => void
+  onFireAgent: (id: number) => void
+  showHireActions: boolean
+  isRelocating: boolean
 }
 
 export function ToolOverlay({
@@ -48,7 +29,11 @@ export function ToolOverlay({
   containerRef,
   zoom,
   panRef,
-  onCloseAgent,
+  onEditAgent,
+  onMoveAgent,
+  onFireAgent,
+  showHireActions,
+  isRelocating,
 }: ToolOverlayProps) {
   const [, setTick] = useState(0)
   useEffect(() => {
@@ -74,9 +59,6 @@ export function ToolOverlay({
   const deviceOffsetY = Math.floor((canvasH - mapH) / 2) + Math.round(panRef.current.y)
 
   const selectedId = officeState.selectedAgentId
-  const hoveredId = officeState.hoveredAgentId
-
-  // All character IDs
   const allIds = [...agents, ...subagentCharacters.map((s) => s.id)]
 
   return (
@@ -86,45 +68,14 @@ export function ToolOverlay({
         if (!ch) return null
 
         const isSelected = selectedId === id
-        const isHovered = hoveredId === id
         const isSub = ch.isSubagent
-        const showDetails = isSelected || isHovered
-
-        // Position above character
+        const showActions = isSelected && !isSub && showHireActions
         const sittingOffset = ch.state === CharacterState.TYPE ? CHARACTER_SITTING_OFFSET_PX : 0
         const screenX = (deviceOffsetX + ch.x * zoom) / dpr
         const screenY = (deviceOffsetY + (ch.y + sittingOffset - TOOL_OVERLAY_VERTICAL_OFFSET) * zoom) / dpr
-
-        // Always show name label; show activity details on hover/select
-        const displayName = ch.folderName || (isSub ? 'Subtask' : `Agent #${id}`)
-
-        // Get activity text (only needed when showing details)
-        let activityText = ''
-        let dotColor: string | null = null
-        if (showDetails) {
-          const subHasPermission = isSub && ch.bubbleType === 'permission'
-          if (isSub) {
-            if (subHasPermission) {
-              activityText = 'Needs approval'
-            } else {
-              const sub = subagentCharacters.find((s) => s.id === id)
-              activityText = sub ? sub.label : 'Subtask'
-            }
-          } else {
-            activityText = getActivityText(id, agentTools, ch.isActive)
-          }
-
-          const tools = agentTools[id]
-          const hasPermission = subHasPermission || tools?.some((t) => t.permissionWait && !t.done)
-          const hasActiveTools = tools?.some((t) => !t.done)
-          const isActive = ch.isActive
-
-          if (hasPermission) {
-            dotColor = 'var(--pixel-status-permission)'
-          } else if (isActive && hasActiveTools) {
-            dotColor = 'var(--pixel-status-active)'
-          }
-        }
+        const displayName = ch.folderName
+          || (isSub ? (subagentCharacters.find((s) => s.id === id)?.label ?? 'Subtask') : `Ember #${id}`)
+        const { color: dotColor, pulse } = statusDot(id, officeState, agentTools)
 
         return (
           <div
@@ -132,118 +83,106 @@ export function ToolOverlay({
             style={{
               position: 'absolute',
               left: screenX,
-              top: screenY - 24,
-              transform: 'translateX(-50%)',
+              top: screenY,
+              transform: 'translate(-50%, -100%)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              paddingBottom: 4,
               pointerEvents: isSelected ? 'auto' : 'none',
               zIndex: isSelected ? 'var(--pixel-overlay-selected-z)' : 'var(--pixel-overlay-z)',
             }}
           >
-            {showDetails ? (
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 5,
-                  background: 'var(--pixel-bg)',
-                  border: isSelected
-                    ? '2px solid var(--pixel-border-light)'
-                    : '2px solid var(--pixel-border)',
-                  borderRadius: 0,
-                  padding: isSelected ? '3px 6px 3px 8px' : '3px 8px',
-                  boxShadow: 'var(--pixel-shadow)',
-                  whiteSpace: 'nowrap',
-                  maxWidth: 220,
-                }}
-              >
-                {dotColor && (
-                  <span
-                    className={ch.isActive && dotColor !== 'var(--pixel-status-permission)' ? 'pixel-agents-pulse' : undefined}
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: '50%',
-                      background: dotColor,
-                      flexShrink: 0,
-                    }}
-                  />
-                )}
-                <div style={{ overflow: 'hidden' }}>
-                  <span
-                    style={{
-                      fontSize: isSub ? '20px' : '22px',
-                      fontStyle: isSub ? 'italic' : undefined,
-                      color: 'var(--vscode-foreground)',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      display: 'block',
-                    }}
-                  >
-                    {activityText}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '16px',
-                      color: 'var(--pixel-text-dim)',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      display: 'block',
-                    }}
-                  >
-                    {displayName}
-                  </span>
-                </div>
-                {isSelected && !isSub && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      onCloseAgent(id)
-                    }}
-                    title="Close agent"
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: 'var(--pixel-close-text)',
-                      cursor: 'pointer',
-                      padding: '0 2px',
-                      fontSize: '26px',
-                      lineHeight: 1,
-                      marginLeft: 2,
-                      flexShrink: 0,
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = 'var(--pixel-close-hover)'
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = 'var(--pixel-close-text)'
-                    }}
-                  >
-                    ×
-                  </button>
-                )}
-              </div>
-            ) : (
-              <div
-                style={{
-                  background: 'var(--pixel-bg)',
-                  border: '1px solid var(--pixel-border)',
-                  padding: '1px 6px',
-                  boxShadow: 'var(--pixel-shadow)',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <span
+            {showActions && (
+              isRelocating ? (
+                <div
                   style={{
+                    marginBottom: 4,
+                    background: 'var(--pixel-bg)',
+                    border: '2px solid var(--pixel-accent)',
+                    padding: '3px 8px',
+                    boxShadow: 'var(--pixel-shadow)',
                     fontSize: '16px',
-                    color: 'var(--pixel-text-dim)',
+                    color: 'var(--pixel-text)',
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  {displayName}
-                </span>
-              </div>
+                  Click a seat or tile
+                </div>
+              ) : (
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: 2,
+                    marginBottom: 4,
+                    background: 'var(--pixel-bg)',
+                    border: '2px solid var(--pixel-border)',
+                    padding: 2,
+                    boxShadow: 'var(--pixel-shadow)',
+                  }}
+                >
+                  {([
+                    ['Edit', () => onEditAgent(id)],
+                    ['Move', () => onMoveAgent(id)],
+                    ['Fire', () => onFireAgent(id)],
+                  ] as const).map(([label, handler]) => (
+                    <button
+                      key={label}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handler()
+                      }}
+                      style={{
+                        padding: '3px 8px',
+                        fontSize: '18px',
+                        background: 'var(--pixel-btn-bg)',
+                        color: label === 'Fire' ? 'var(--pixel-close-text)' : 'var(--pixel-text)',
+                        border: '2px solid transparent',
+                        borderRadius: 0,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )
             )}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 5,
+                background: 'var(--pixel-bg)',
+                border: isSelected
+                  ? '2px solid var(--pixel-border-light)'
+                  : '1px solid var(--pixel-border)',
+                padding: '1px 6px',
+                boxShadow: 'var(--pixel-shadow)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <span
+                className={pulse ? 'pixel-agents-pulse' : undefined}
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: '50%',
+                  background: dotColor,
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '16px',
+                  fontStyle: isSub ? 'italic' : undefined,
+                  color: 'var(--pixel-text-dim)',
+                }}
+              >
+                {displayName}
+              </span>
+            </div>
           </div>
         )
       })}

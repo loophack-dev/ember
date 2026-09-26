@@ -26,9 +26,11 @@ interface OfficeCanvasProps {
   zoom: number
   onZoomChange: (zoom: number) => void
   panRef: React.MutableRefObject<{ x: number; y: number }>
+  relocatingAgentId?: number | null
+  onRelocatePlace?: (agentId: number, col: number, row: number) => void
 }
 
-export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, onEditorTileAction, onEditorEraseAction, onEditorSelectionChange, onDeleteSelected, onRotateSelected, onDragMove, editorTick: _editorTick, zoom, onZoomChange, panRef }: OfficeCanvasProps) {
+export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, onEditorTileAction, onEditorEraseAction, onEditorSelectionChange, onDeleteSelected, onRotateSelected, onDragMove, editorTick: _editorTick, zoom, onZoomChange, panRef, relocatingAgentId = null, onRelocatePlace }: OfficeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef({ x: 0, y: 0 })
@@ -378,6 +380,17 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
         let cursor = 'default'
         if (hitId !== null) {
           cursor = 'pointer'
+        } else if (relocatingAgentId !== null && tile) {
+          const relocCh = officeState.characters.get(relocatingAgentId)
+          const seatId = officeState.getSeatAtTile(tile.col, tile.row)
+          if (seatId) {
+            const seat = officeState.seats.get(seatId)
+            if (seat && relocCh && (!seat.assigned || relocCh.seatId === seatId)) {
+              cursor = 'pointer'
+            }
+          } else if (officeState.walkableTiles.some((t) => t.col === tile.col && t.row === tile.row)) {
+            cursor = 'pointer'
+          }
         } else if (officeState.selectedAgentId !== null && tile) {
           // Check if hovering over a clickable seat (available or own)
           const seatId = officeState.getSeatAtTile(tile.col, tile.row)
@@ -395,7 +408,7 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
       }
       officeState.hoveredAgentId = hitId
     },
-    [officeState, screenToWorld, screenToTile, isEditMode, editorState, onEditorTileAction, onEditorEraseAction, panRef, hitTestDeleteButton, hitTestRotateButton, clampPan],
+    [officeState, screenToWorld, screenToTile, isEditMode, editorState, onEditorTileAction, onEditorEraseAction, panRef, hitTestDeleteButton, hitTestRotateButton, clampPan, relocatingAgentId],
   )
 
   const handleMouseDown = useCallback(
@@ -562,6 +575,12 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
         return
       }
 
+      if (relocatingAgentId !== null && onRelocatePlace) {
+        const tile = screenToTile(e.clientX, e.clientY)
+        if (tile) onRelocatePlace(relocatingAgentId, tile.col, tile.row)
+        return
+      }
+
       // No agent hit — check seat click while agent is selected
       if (officeState.selectedAgentId !== null) {
         const selectedCh = officeState.characters.get(officeState.selectedAgentId)
@@ -602,7 +621,7 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
         officeState.cameraFollowId = null
       }
     },
-    [officeState, onClick, screenToWorld, screenToTile, isEditMode],
+    [officeState, onClick, screenToWorld, screenToTile, isEditMode, relocatingAgentId, onRelocatePlace],
   )
 
   const handleMouseLeave = useCallback(() => {

@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:44a13aea6287a16ac6e28e4dae400581d27e3c0d327a82e21bafb83a149d2340",
+  "claims": [
+    {
+      "id": "claim_1f4fc1b6141b4a5191bb1739eb2f50e3",
+      "statement": "`OfficeLayout` version 1 stores dimensions, a flat row-major tile array, placed furniture, and optional per-tile colors; tile-map conversion indexes the flat array as `row * cols + col`, and rendering uses the same index for colors.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/engine/renderer.ts#L45-L87",
+          "version": "repo-lines-v1:sha256:b6981771c2f8913590f524d61549f3fe8a37b273b308ed2cd1da189deb9e3380:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2YzMxZjM2MDQwMjRiN2EwZWU2YzU1NDhjZjlhMGMwYzI4MjJlYmFjNGU2OGE3NjdiZmJmYzEyMWYyMmIzY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGVjMWJiZDY0NmZmMjgwMGEyOGExNzE3MzFlNmNkNDIyMzg5OTVjM2Q1MjZjMDM5MWUwZDMxOTQyZjJjMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNzM4ZWRlN2NkNTA4YzViYjUyYWQxM2ViMWE5MWQzOWM5YjY5ZDM5Y2U3MWJiMDI1MWU0YjdiM2VjOTRmOTgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L6-L17",
+          "version": "repo-lines-v1:sha256:fa6ab87a930c915da280c1b292aa1a28cd665e9f36c350cd5a48b939445104b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTAzODU0Nzc2ZjY3MWFkMzk4ZjAwZDEwMDllZmQwMjI4MmE5ZWRlYzRlMzVlZmRhNThiZWIxODc5N2JjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyYmNiMTBkMmZmMjVkZWVlYjllNjE0OGVhMmU4MTEzZTA5MjY5N2VjYjU4NGI4NmU3Y2QzMmE1MjA5MmUzYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZWUzOTNiNDZhMTIzMWI4MWJmNTllMjEwYTgyZTA4YjRkMjgwOWQwNDlhZWNlYWU2MGQ1MGYzMDdkNDQ5NTUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/types.ts#L126-L143",
+          "version": "repo-lines-v1:sha256:f7069e1184fefdbb418f9c72b720e5b6aac4c4f416a7fb0c0d97ad5b4bbd1690:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNmIyMjNlYmY1MmQyNDNhYTZkMDUzZDdiY2ZmNmUwMmY5M2I0MGJmOWVkZDc5YWEwMmNjY2ZhMWU2MDA3MGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOWY0ODg2OWM3MmZhMzk5ODNhNTU4ZWU5OTlmZDFlN2Q0NTllYTNhYjVmZGNmMTRlY2M0ZDZjNzQyZjRlYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5ZDNjNTEzMDliYTU3MjBmNmMxNjM1ZDdkOWFiNzhlY2Q2NGE5MzkyZmVlMTI0MjUxYmFmZDRhYjM2NWQwOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffa7401d2bc64ee2aa8713d813acf8f8",
+      "statement": "Incoming `layoutLoaded` layouts are migrated for colors only when they are version 1, and migration supplies default colors when `tileColors` is absent or not parallel to `tiles`; JSON deserialization likewise accepts only version-1 objects with tile and furniture arrays.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L90-L114",
+          "version": "repo-lines-v1:sha256:d649e80279d9bfaff617135516b5ff787c9650921334cb56fb996c178b6462ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NTc0YWE5OWRhY2MwYTJkOTY1Yzk0ZGRiMmZjNWViMjdlNTY5MmJlMGVmODAwYWVjZjYwM2QwMzYyOGEwZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNjM1YWFiYmFmZjlhMDQxYTMzZmY1ZDdkNWJhMGVjMDA2NzA0ZjY4NmU2NjY3NGJlOTY0ZGZmZGI1NDU1NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Njg5M2Q3ZDM1ZTJjNzMxNDMwZjFkNjFiNjNiMWE3MWY0ZDI2NzVlODQwNDA0MmRkY2NlYjUyMmQ1MTdjYzgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L359-L419",
+          "version": "repo-lines-v1:sha256:e652cf9724d5df174f07c8f217893f4415436f404bbbab105475eb518905cf59:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmM2VkYWJlNDQzMzJiNjY5ZmY5ZTk0OWMwYTk0YjIwNjgyY2YyZDhjOWQ4ZTVjYzZkYzgxOTQ2N2Q2ZjFjOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MmY1YzJhNWUxZTA0MGIxYWM1OTliZjFmZDFhMTRlMWJhNDk1ZWYzYjFlZTc4ZWFiMWQ2MDhmNWM4NDQzMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3MDA4ZTVjZTdlZDAyZDVmYjZmNTUyNjllZTczYzZlODc2ZjAzYTUwYzBmOGZiMmMzOWIyOGYzNDE2Y2RjOTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82bd3f788166491682176513b8a50125",
+      "statement": "`OfficeState.rebuildFromLayout` regenerates tile map, seats, blocked tiles, furniture instances, and walkable tiles, shifts characters on left/up expansion, preserves viable seat assignments first, then assigns free seats and relocates unseated out-of-bounds characters.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L56-L139",
+          "version": "repo-lines-v1:sha256:a50bdd339e62bea58dd65f29355ae5247b2804bb576fcc5f35fdea8415fcd45d:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNTg3YzhjY2JmZjgzZDY2ZmNhNDZiY2VmNTIwNjE4YWZhNmJiYWRlNmU4ZmY4MjcwNTdjMzBlYzlmZTcxNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1Yjc4NmVlYWZjYTU2MzFkY2M5NzM2NDM3ODFmY2VhYTQxZjFhMWU1OGNiZTUzNjM2NWYxYzIzYjUwOGYwYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1YjUxZGI2YWVmMzliNmNlNmY2ZWFjMzI4MDU2ZjIzNjA2YjMyY2I5Y2VkZGZlODI3Zjc1NDY4NDU3OTYyMDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9be7f64a33b84f87a6add97233558d32",
+      "statement": "Furniture placement requires a known catalog type, bounds, permitted wall or non-void tiles, and compatible non-background footprints; it supports desk-surface overlap for surface-capable items and excludes a moved item's own UID from collision.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/editor/editorActions.ts#L87-L160",
+          "version": "repo-lines-v1:sha256:352cf9072301be88a43aa25ca28281523da9f49566f536b8c6aea88e5811a98d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMmEwOTUzYzQ4Y2IxMDU1YTY0NDQ0MzUyY2E5NmFiNTY2MGJjM2JhNjgyNGE4MzlmOWRjZDM2OTZjNTg2ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZWQwZDNmYzA2YjE4NzQ4YmUzMTJjYjI4YmMzOTliMzVmZGRkYTcwNDc2ZmYyZWFjOWIzMzZjNDBlMzdmMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MTQ0MWZmOTRiZjE2MDExMTlhZmZkZDk1NWNiMjhiN2YyNzJhN2I0MWE3MGViOGRlMzNkNzg3NzYwOTgyZjkifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L100-L115",
+          "version": "repo-lines-v1:sha256:7ead4d99ffab3a7a6d1c99ad59b08e8515fdf5333a7d682642f48b7a29567864:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5M2I1YTdiZDBjNzQ4ODU1N2IzZjg0MTY4OTFmNGVjZjZlYzI3MTkzMWE3ZGRmMTA5MTU2Y2QxMzczOWFmYjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmMGQxNWExYmE5ODhhZGEzNTdiOTNlNTk3MTI5OGFiZjYyMmZlMjgyM2QzMzdjYjQyZTExODFkMDVmMjc5NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YWNiMzg5ZGM0N2E2MTBlYWY5NjQ1M2NjNmUzZjU4ZjgxNThhNTVlMzY3NWI5NDU1YjdjMjk1ZGRkNWEzNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2OTBlYTAwMWY3ZDI0M2IwNWYyNDJjNGRiMjBmYTM5OTVjYzYxZDJkMTVhNWY3Yzg4ZTNjOWZlN2I4MWM5YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52049a76f2104e47bf6cc0e1df652623",
+      "statement": "Editor expansion is capped by `MAX_COLS` and `MAX_ROWS`, fills the new border with voids, preserves row-major tile/color data, and shifts furniture on left/up growth; the editor rebuilds with that shift before applying the paint action.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/constants.ts#L3-L8",
+          "version": "repo-lines-v1:sha256:515bf7714385e20337f7455e48892401ca455947028e92b3c4f07cb4e9e0cc59:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJkNWMzYmUxMGRlY2M3N2Q0ZWM5MjM4NDY4MzNhYjE1OWYzNTVhNWMwZGUxNmVmZjhkMDg1NThmMjcxNmVlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc0ODNlN2RhYWY4NjhiMGFlMGRjZTQ3OWZhMTBmZDY3Nzk3OGI4NTBlNGRmZjA1NDMwOTEzN2UwZmIyZjNiMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWFmYjhlYzM5OWJhOTkzYTgwOWJjZjc2ZWZiZDliMTA3YTY3ODViYWJhMzE5MDk2OGJiNjVlOGYyODg2NmI5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJiMzA3NGI2YzUyNTNhMGM2NWU4MmNhZjIzYjhjN2YxMDQzMzJiMjk4MWE5NWY3ZTQxN2ZjZmQzYjJhY2I0MiJ9"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useEditorActions.ts#L330-L406",
+          "version": "repo-lines-v1:sha256:dd3617599f057b70c0faf2b43a0a92307a8d0a4b51a96bfa3b39042a2f6aea61:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0MmM4M2MxODcwOTY1ZThmZTQzN2Y4YzgyMjFlZTA1MjEwODNlMGE0NmZhYjhiMGI1YzFkZmU2MjQ2YWVlNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZWI4Mjc3Y2EzMTU2ZWIxMDc4ZGRhODhkZWE1Y2Y2NzAwZDMwOTMzYTg5MjIwMWM5YWZmNTM0N2MzMmY5MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0OTllODhhNDBmMjhhOTYxOTg2OTUyOWEzZDZlYmZiZWM5YzMzMTcwOGQ0ODIwOTUyNjQwOWFkMGM0Zjg3MzcifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/editor/editorActions.ts#L162-L218",
+          "version": "repo-lines-v1:sha256:5bf5daeae539a8aee58d6bc445ef932f61013d0b04cc32f741180212a93fce83:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZmNhNGU3N2M4YTBlOTc2Mjg5MGJhYTg2MmUyZWFjOTAyMDY0YjVhY2ViMDcxY2Y4NTdhZjVkODk5OTUwMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYjdkNzhkZGM0M2U5YTAwYmMzNzUwZTIxYjAzOTVmYTA4NzRiZDUwYzVjZTJjM2M3Nzc4NjIzZDRjZmY3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_060675eef4ec4b05b0ec6be429a5430e",
+      "statement": "Seats are generated from every chair footprint tile with stable chair-based IDs, choose facing from chair orientation before adjacent desks and a down-facing default, and furniture blocking skips only configured background rows.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L118-L205",
+          "version": "repo-lines-v1:sha256:53a5f16e98020f879074d7d9295123942d7974118fd82622a5f8fa32117ce689:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NTAwOGQ1YjhjMjc1YTdkMWRkNTMwZTg4NmE4NWYzYTZjOWYxMGE2OGQ3YTIzZjNkNzM4OTdjMTgxODRhMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YWNiMzg5ZGM0N2E2MTBlYWY5NjQ1M2NjNmUzZjU4ZjgxNThhNTVlMzY3NWI5NDU1YjdjMjk1ZGRkNWEzNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NmE1ZmE2NGNiYzMxYTZkNGZlMTE2OWJjNzllOWI1NDI4ZmY5ZTc1Zjc2YjU2NjMyNDcyMzM5NDBhOGZmNzUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L80-L97",
+          "version": "repo-lines-v1:sha256:9d002cad87a7b8b9744941e6b0f8effcad7eb0a2f50e6732e551d4092819aecd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MWE2OGI4Yzg2ZGVhMjk5ZGNkYzgyYzRiNjE2NzQyNGE5MzU2ODUzYTg4YjMxOGYyNDdkOGFiYTYzNGYyMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmMGQxNWExYmE5ODhhZGEzNTdiOTNlNTk3MTI5OGFiZjYyMmZlMjgyM2QzMzdjYjQyZTExODFkMDVmMjc5NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkZWNhN2M1MjI1YjNhYzk0ZGNkNzJhYWY2N2UxNDE1ZGM3NTlhOGQ3YjVlY2EzYTFlMDdmMjM2MGU5MTVjOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5M2Y5ZjQ5ODM4ZWVhM2NkMjc1NTYxMzg5ZDJhODVhM2YwYmVjYjk2MWQ4NDA5OWVjNDQwYWZiN2RiZjFkMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2b7115ccbaa4f2eb72a1aea05a10419",
+      "statement": "Navigation uses four-connected BFS over in-bounds non-wall, non-void, unblocked tiles, while `OfficeState` temporarily removes only the querying character's own seat from blocked tiles for simulation updates, seat actions, and manual walking.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L145-L160",
+          "version": "repo-lines-v1:sha256:1a6b05ddf56ab21355ad4e6c559bc511d0e521755ed497e86da286e42f0bb91b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlNjMwOGRjNzkyMTI3MzkwMzY4NTVhODg5NWJjZTBiNGEzMmFmNDM4NGVkY2E5NjMzYWNiMTRiMGNkMTJlODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3N2VjN2NjZTBhZTdlZGYwOGI2MGY1NDNiODZlM2QxM2E1MzdkZTg4ZTU2MjU5YjgxZmUzMzg2OGVkODUwZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0YWYzMGYwYTQ0M2E3MGI0NGVlYjQ0ZjViMmNmNzFhNDJkZWViYjM5NzVjMDYyMWExZGUwZTU2OTcwZTgyNjUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L276-L357",
+          "version": "repo-lines-v1:sha256:75fe89680d7216c549afcfa04f05a7ac9fcbe7c996d9f9af31af02eecaa7489c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNzA1OTM5ZWNmNDRhYmFhMDU0YmExYTk1MjdkYzIzMjRmMjhhOWFiNjRjOTc0M2Y4ZjAzNmU2Y2I5YWI5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZjNiODU5MTRiMjZhZjlhNDg2ZjIxOWY4MmM0Y2U5MjZjMzY1NGVmMTU0NDY3ZmQzY2NlMGUxYTBjODExY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNWNlYTY4YjgxZTZiMmFlOTc4NWE4MjEzM2E0ZmFiZTA0NDE1MmI3ZGI5NWQ5MTYyMjJjMGFiNTg1Y2UyNmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhOWNiMDVjNjRmYzVhMjFiMGM2ZjA5MDY3MDQ2Mzg0MTRmNDlmZWM4NWVjZWQzNDgwODJjNmVjMmZkYmQwYjAifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L616-L654",
+          "version": "repo-lines-v1:sha256:be291123fa096d25ad3ac20854440ab914f1a2d880b90f7d3bd6315bd19a6281:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYzAyYTdlYTUzZDUyNGM4MmFhMzhiYjBkYzVmOTM0ZDgzMzk2MmQzZThjNTE0ODYzOTA1YzEwMGJmMTdhNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MzE2MzU4MTVkODVmN2JiNzIxYzRkNDFiNGMwNWYwMzFiZmVkYjYxNTc0ZTA5ZWE0YzkxYWM3NzE0OTBhZTQifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/tileMap.ts#L3-L104",
+          "version": "repo-lines-v1:sha256:07317abb7aa5d62eff33fb4a0e80984a4e6ac8af8753c3b654b66f06929e9f6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiY2Y3YjlmZTAwMzQ2ZmEwOWIzMTA5MzA2ZWFhNmUyMjgyYzY2ZWZiMmJiNDEzMjlmNjkxM2JmZDZiNjllY2JiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyZTAzNWE4NWRjMTYwYWRiMjAyMjA0YzkxNzg2ZmZmNjI5YzFmNTZlYTkzMmZjZDE3MGFiMDFiNjVkNDY2YTY4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MiwicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0NzQ3MjZiMGE5Yjk1N2FmY2RhMWFmN2VjMDE0MzZlOGI4ZGE0MTQ2OGE1OTcwODVjYTg1YTc1ZTdlMzQ4MDFmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7f18c0075194303a55f60d74395fdf5",
+      "statement": "Initial agents are buffered until `layoutLoaded` has rebuilt seats; normal agents prefer a free persisted seat then another free seat, while Task subagents use negative IDs, inherit their parent appearance, and choose the closest free seat or walkable fallback.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L79-L114",
+          "version": "repo-lines-v1:sha256:f9e69c6711784d6e443cbd279fb78d1bfc5c3815c088b98c4163a13bb76a608b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4ZjY2MDFiOWI1MTYyZTZlMDk1OWNiNTdkMGFiOWM1NmQwNmMzODZjZDhiNmM3N2ExNTMwYTVjOGQ5NGYxODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MDMwMzZkMDZiNjQwZDBhZWMwYzA4ZWRiOWEzNzY4ZTQ3ZTg0NmU4NTFkNTRjM2E2YTI3OTQwZDljYWEyYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Njg5M2Q3ZDM1ZTJjNzMxNDMwZjFkNjFiNjNiMWE3MWY0ZDI2NzVlODQwNDA0MmRkY2NlYjUyMmQ1MTdjYzgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L196-L248",
+          "version": "repo-lines-v1:sha256:3f54a8827fe1367cb4edf38a76dcdf48448f01a4ec9cccea951be41ddd637755:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZWUzZjYxYTU3OWFmMjdjZGY2OGY0ZTY0ZmRlOGYxZDBlYmJjNmVhNTA4ZjM1ZGI1OTFiZDBkZTI3OTdiZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1ZmFlODliOWRmNDE5NGQwODg0YjJkMTI1Yzc1YmU1MzQ2MWViMjFhODkwZDVmMGNmOGY3ODU1NDkwY2FmNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDQwZDc5ZTJjMzE2OWUzOGFkMWQzMzdjNDMxNWFjNjhiMjZjODQ2MGVhOTEzZDQ3ZGU2NzFkZTNmNzUzMTEifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L360-L424",
+          "version": "repo-lines-v1:sha256:5df2af66c153ea2b9a0113f4557d689e2e258572bafff0546e2841c972ce78e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTc3ZGRmYTkzNjNjNjNlMWQ1OGY3OTgzNmMxNTBlMzQ1YmNlMmMyZTYwMTZmYWYyZTllNjRkOWU4NTY5MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNWZlZTk1M2YzN2ZmM2M1NTkwNGQ0ZThmMmRhYWMyMjJkMDZkZDE3NjlmZTZiZTU0OWRlOGQxNGY0MTFiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMDY4YzdkNTU0YThiODc5MDg2NDhmZTcwZTUwNzZjZmI2MDYxZGUxYjc4NDM2OWRjYWFlOWRkMDhlOTJkNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c619974879e4930be5e52d45f7b0a78",
+      "statement": "The runtime furniture projection can substitute an on-state asset for furniture in the region faced by active seated agents without modifying the persisted layout furniture.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L497-L570",
+          "version": "repo-lines-v1:sha256:fbf53f43bc64f196b9a67894391919c38566d4920813bc9e42e4a8a28b80faea:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0YWQ2ZDkzY2U0ZDE2NjRjOTE5OWU3Yjc2MTVhMTVmNTI2ZjhmYzZlNzc4ODZkMGRkYmE1MWE5MjIzMjc0MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNmYxZTVmOGU1OGUyNTNiMWU4ZjI4ZjRiMTkwODAwMTMzNDhkYTI1MGM2Y2NkOTFhOGI5OTk2ZTA1MzIzOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZmI2Mjg1ZWFiZDE1N2UyNWQxOTZlYjZiMTA5ZmQ3NTllZTQwMjVjZTMwZmY1MTE5MjE3MmEzODhiMTc2Y2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12021650a1cf49bba28b046b97cdc893",
+      "statement": "Ordinary editor edits push undo, clear redo, mark dirty, rebuild OfficeState, schedule a debounced save, and trigger a render tick; explicit Save cancels the timer, immediately posts the layout, records a cloned checkpoint, and clears dirty.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/constants.ts#L84-L89",
+          "version": "repo-lines-v1:sha256:096663f11473508b2dec9f94d6801fe71a388a99701d2a8762883963e5015198:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDBlZjg3MzVmOTI4YWJhYzIxNWI5MTBiZmE5MjA2MjM5NmIzYjllNjNlMmYxOGVkNjhhOTk3Y2FkYjgxNjNiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ3NDI5ZTgxNzc5ZjE3NzNhN2QyNTU3OTM0OTc2MmE5NWQ4Y2YzNzY4NmZjMTJiOTZlYzM0OGQ3NmRiZGY1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzViZGU5NTYyNTc5YWM4YTQzOTU1YzUyMTVlZDYzMWU3ODIxYWZkNzIxOTQ5ZWIzMDMwMTNhZTM4MjU0NGE0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjFiNzQ2YmQ4NzI4OTA1Y2U2ZDdiZjc0MjlhY2FhZTNkNmEzNWQ4NGQ4ZDIyNTAxODJlYmQwZWRkZjllZmNmMCJ9"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useEditorActions.ts#L263-L309",
+          "version": "repo-lines-v1:sha256:0e8021beab0e51b4c8a83cc7e334cd6245616474ff1bb388486cdb4fd4708caa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NzU5ODhjN2VlOGUyMmViOThhODZkMmU0YTEwOTI0MTQyYzYxZjU4YWY1Y2RhNDc3ZWYyNDkwYzZmZjhlYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ODE2MTNmYTA2MDBmZTU2NTRlNTg5ZGE5OWUwZjE2ZGFiNjE3OTdkNjhmYzI0OGY2NDM5MWZiMTI3MGRhOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZmEzNDQwZDQ0M2IxMjc4Y2MyMzExY2Q1MDMxYjc3NTY0NGJhM2MwODU4ZWE5NGYxZTRmYjFjZDg0ZTQ1YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNjU5MWNhZTU5NGY0ZGQ1YmUzODg5ZWFmYTdiYjY0ZjhmMmFjMjI2MzE4YmE0MmYxNDc0Yzg5YTc5MWNhZTMifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useEditorActions.ts#L54-L79",
+          "version": "repo-lines-v1:sha256:e6e6663ea395a5aef5711de9bc67cfc0fe1db32caf725db79933e2ffe71ffbc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMDkxYWNiNjZhZTZmNzNkNTQwZTNiZjQ5NDRkZGRiNzU4ZGU5N2FkNGJmNmY2YmRmYTMyODIxODQ5OTFhYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTIwODQ3OWMxNzdkZTQyNzQwOTAwZTc1ZjZkNjI2ZjIxOWZiNDhmZmQ5YzA0YzQ0MTM2OGE4YzA2MGUxNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYTJjYjA0NGIyNGYwMjMyYjM1NDNkNGEzZjQ0MjBkYjZiZDVhNTBlZmNhZDI4OGVkZjZhMmYxOTVkYjBkYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5MjM2MTA2OGIyYTVlZGY4ZmY4ZjIwZmUxZDliZmYyYjFlMTBiY2Q5NjUzMmViMzFjZjc3ZjA3OThlNjNkY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_512b08314bf042019b1f808d38a8f3e8",
+      "statement": "The server persists a received layout to `~/.pixel-agents/layout.json` and broadcasts it to other WebSocket clients; it stores agent palettes, hue shifts, and seat IDs separately in `agent-seats.json`.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L169-L200",
+          "version": "repo-lines-v1:sha256:2a585cd3caf97ea4f3f6bfab21062ffe193ee835eaaa1622a7f581e102808702:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMWZjZDdiM2Q1MGRhNzY4YjQ3ZDkzYTExZjQzZjEzZjcwMDYxZjVlYmY3Y2E2MzJhNTFkNjY2MzBhNjdhMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5Njg4OGM2NzNmMTUzOGIzNWZmOGQzOWFjMWQzOWRjODcyYWZlMzNlYmZiZTZjYmY5MzMzNDA4NjNlM2M1NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZTZiNTcyNjdjMWYwYmM1ZjJiYjliNzY3MjRlNjA2MTQ1N2E4ZTY3OGMwN2VlZDc3N2ZjYTc3MmE0NzhlNTUifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L43-L76",
+          "version": "repo-lines-v1:sha256:7f5eff686f62330e2eee12f8db5965696037afc6e741bd521d1d9969649ada02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYjBkYmFmODE4NTU0NzJjNGJhMThjYzk2YWEzNDc1OTg5ZDhlM2YzOTU4ZGVhNzc4NDdjNzg3ODc5NDVlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTNiMWIyMWUxYTdmOTE0OGE5MTIzNTY4NjhiOGRlYzY1NmUyMWQ5NmFhYThkMzhhMWZhOGEwNzViZWRiNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OGE1MzA2ODBmNDgwYzUwNzJjOGFlYjBiZGJhYzE1MjVhODAwZTc0YmUyODJhZDRkZDc4MTRjMDlmMjFlYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MTkwMzlmMjhiMmEyNDA2M2EyZTI1YzNkMTlhNWM2YzZmYzg5ZWM0OTdlNDI0ZTBhYmQ4Y2JjOGJjYmQ3YzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9869f5d64684a598254b1c76404af93",
+      "statement": "A webview ignores an external `layoutLoaded` update only when it has entered edit mode and has dirty local changes, preventing another tab's broadcast from overwriting unsaved edits; otherwise it rebuilds and updates the saved-layout checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/App.tsx#L119-L125",
+          "version": "repo-lines-v1:sha256:c66f9b4bbd3b52bf19f01bb6010b9d2342690f804b8746583ec366856e0be6e7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZjMzNkYTUxM2RlZmMyZmRmODdjM2I2NjY5OTJiYzBlNTIyZmFlMDk3ZjEyNjFkODcwMjE4ZTE0ZjllNjk3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzQwYzVkM2RjM2E3NzMwNzkzYzg5Mjc5NDhiNTU5NjY0MjA3Zjc5YmE4Nzc3M2MyMTUwMDQ0MzE5NjJmZDQ4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM1NDA3YmJhNGQwZDQyOWFiODJiZWU1ZWQxN2FkY2UyY2MyMTljYjYxMGJkYjFkZGE5ZGM1ZTNiOWRkZmJkYSJ9"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L90-L114",
+          "version": "repo-lines-v1:sha256:d649e80279d9bfaff617135516b5ff787c9650921334cb56fb996c178b6462ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NTc0YWE5OWRhY2MwYTJkOTY1Yzk0ZGRiMmZjNWViMjdlNTY5MmJlMGVmODAwYWVjZjYwM2QwMzYyOGEwZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNjM1YWFiYmFmZjlhMDQxYTMzZmY1ZDdkNWJhMGVjMDA2NzA0ZjY4NmU2NjY3NGJlOTY0ZGZmZGI1NDU1NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Njg5M2Q3ZDM1ZTJjNzMxNDMwZjFkNjFiNjNiMWE3MWY0ZDI2NzVlODQwNDA0MmRkY2NlYjUyMmQ1MTdjYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88523d7215bc4a7792f769cb14d35c84",
+      "statement": "Canvas rendering consumes the derived map, furniture instances, characters, layout colors, and dimensions; void tiles are skipped, while furniture and characters receive depth ordering and seated characters receive a visual offset.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/components/OfficeCanvas.tsx#L88-L227",
+          "version": "repo-lines-v1:sha256:82619a33f4cb3c29764125a3adcd0d2944b44e4eca0777af56b1355fa6787837:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0MjkyMTEzZjAxODA5YWYxNDg0OGQ2M2Q4YmIzZThhOTViMWY1ZTc4OGIyMmY1YzMxOTEwNDE4OGQ3ZDQ3MGFjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiOTc4ZTI1MDNiOGNmMzdhMDZmN2Q2ZjBhM2E2YjZmZTM1NjkxZmJjYWI1MGI4Nzc1Y2FiNmZhYmM3MWM1OTJiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhYzZkZTdlZWUyMTRjNWJkZTVkNmYxYzg1MTMzYTNiZDlhYmVlOGFkOWZkMmIzMjMxOTQ0MTNmNjBkMDFhNWZkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ODk0MzExNmRhMmUxMjFkZjcyNzg5YzRjMDNmZTBkZjhhZDliYjQ0MTlhNGI4ZTcwMGE3MTcxOGZlNmUyMDMzIn0"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/renderer.ts#L45-L87",
+          "version": "repo-lines-v1:sha256:b6981771c2f8913590f524d61549f3fe8a37b273b308ed2cd1da189deb9e3380:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2YzMxZjM2MDQwMjRiN2EwZWU2YzU1NDhjZjlhMGMwYzI4MjJlYmFjNGU2OGE3NjdiZmJmYzEyMWYyMmIzY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGVjMWJiZDY0NmZmMjgwMGEyOGExNzE3MzFlNmNkNDIyMzg5OTVjM2Q1MjZjMDM5MWUwZDMxOTQyZjJjMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNzM4ZWRlN2NkNTA4YzViYjUyYWQxM2ViMWE5MWQzOWM5YjY5ZDM5Y2U3MWJiMDI1MWU0YjdiM2VjOTRmOTgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/renderer.ts#L97-L136",
+          "version": "repo-lines-v1:sha256:629f0986626bf64e3180a55b002a142ebf70e804effafe0d78f6b30af8d1f8a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MzNiNTQ3NmNmMjhkZDIxZDlhNDkzNzU3MmVhMmU0ZTFkZTkyZThjZGNjZGNiMGIxZDk4ZTJhMTFmZTM3ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZTE5ZTE2Nzc4ODdiOThhNWM0ZTJkODcwYzZiNGU0YjEwOGU5NmViYjhkMjcyYTU5NDFjYTM4Nzc4MTcyNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNjRlYTIzMWM3MGJmOGYzN2RlNjkzMjQyZjU3MWYxMzE2ZWIzN2Y0MDgwZmI3MGQ4NWYwNGU2ODM2MTQyNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmZDJjNDc1NDg5NTMwM2RjMzJiZjBjNmM0NjdjZTUyMGE3ZjlhN2VjZmVkYTUzZjE5NDg2ZjFlNzA3YjkyOWIifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/layout/layoutSerializer.ts#L19-L77",
+          "version": "repo-lines-v1:sha256:154cd2f258d4e128c36d5ca0705a7af76d32b379b28ce54c5c71c9db10e733a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNDZkMjM4MWZmMDc1NTdmN2RlYTAxYzExZTgzM2JjODYxYjM0YmRkNmYyZTYxNmZmNTBiNzc4NzY4OTdkOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjOWE5YjRmOTFkNTZiZjBmMjdhZGNmZjZlZjg0MzI0ZjgwYjhmYTdiN2Q0ZWMwOGRkZmQxOWNkYmRlZGVmMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1ZGQ3OTJlYWJmMDhiMjNmZDdkODBlYTkwMmY1N2Q0MzkzOWRiMzM0OTgzNWM0OTM5YjIxNTAwNTFmOWEzNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiMTdlMmY0ZWE3NDY2OWFmM2RmN2UxMWZhNThlOTg4NGJjODQ0ZGRiYWE0MmMyZWM3MzMwZmUxNDU2MzQyNmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T16:48:54.278Z"
+  }
+}

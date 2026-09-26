@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cbbca35b06cb956e66a6d4e85298be24fccbe782290f8d765953817433de3130",
+  "claims": [
+    {
+      "id": "claim_6112646a6c5c469b877f6f7243481303",
+      "statement": "JsonlWatcher discovers recent direct JSONL files below ~/.claude/projects at startup, watches added JSONL files, tails admitted files once per second from byte offsets with an incomplete-line buffer, and removes files that become stale, missing, or unreadable.",
+      "evidence": [
+        {
+          "resource": "repo://server/watcher.ts#L24-L44",
+          "version": "repo-lines-v1:sha256:1ad428b366777c23b07ed364f3b4acc84a7176626c6644f79fd354a2e8dd108a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwOTM4NDI1ODdlNGZkYWIyYzdmYTBiNzE4OTczMzFmYjg3Mzc5YTk1YTc4MjZhZTlkYjU5NTQ4MjhmZTY5NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNWZmNjA1MmQ5NDAzMWU4YWJiNzQ4MjYwYTVlODJkODAyODU4ZjBmNDM3N2MyZThlYjZhZGMwODViNWVkMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZWFmZTY0MmJkNTNlYmQ5N2I0YTJiNjIyM2MyODRiOTQ2OGQ1MTUzMTU3N2QwYTM2YjBmNzNlMjc3MDRhMWIifQ"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L46-L68",
+          "version": "repo-lines-v1:sha256:f6f1dc846cfca492b553b6ab203e90ece32bbe45550743f35be7ae929290691c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ODMyYWVmNjJhMGY0NTg1ZDk0MWVlMmEwNDIxNDljNjZlMDgwMGIyZWQ4OGQ4NTFlZDY1ZjNlMjk4OWE2MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2NzIwYTVhZmI5M2EwYWY0YjUzYTBkYTYzMjg1Y2IyZmRkNDdjZWE0NmUzYWY4Yzk3YTMyOTBmNjkyM2UxNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZGUyZjBhMmYxZDA5NGM5OTk3NDQ3NzRhNmU2MTAxZmEzNmE1NWZjZjczNWRmNzJkZjllYzIzNjkxNDUwODgifQ"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L7-L17",
+          "version": "repo-lines-v1:sha256:b09dbfc38dfe97165285197a0b9478b16041f887c7858807848907f3f04b94d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MjMwMGRkYjdjYmU2ZTdiNzI5NmJhNGJmYTkyMTJhNGJmYjVjZDA2ZjdjNDAxNjY3ZGMyNWU4OWMzNjRkZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYmYwNWRiOGYyNmJjZjVlODYyY2Q2M2Y2MjE4NTljZmM4NTFkYzUyOGRkYjBlNTc2NWE1YzVlYWY4NzI0NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlNGJlN2UzYTcwNDBiNDc3MGU0OGNhMDc5ZGNlMGY5ZTA5YmM1YjRmMGQzZTA4OGQ2NWJhOWVjYmI4NDg0MDIifQ"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L95-L138",
+          "version": "repo-lines-v1:sha256:c6fbb22f5fb2daa7769fafea577e50bab112ae7e700d64cebce4b77d3220f38e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMjk0MTcyNzM3YTRlOTQ5NzE2ZjkwODE4YTBlM2NhYzE0YzBiMjc2ZDY3YWZjOWRkNWQ0YzhlZDIyYjVkMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5MjkyZGY1YzZiNTdhZjc0YzE1Nzc5OWVhMGY1OWZiOThlOGJkMTlkZDg2MDFjZTEzYWE1NDYwODY4ZmJjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzNjUzNmM0ZmQ4OTk4YmNhMThjNDNjZjEyMjhmZTRjYjgyMDBhYjg1Njk5MDg3NGM0MGMyOTEwZDkwM2FmMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6eec39e55bce425595feea72b499c42a",
+      "statement": "The server keys tracked agents by Claude session ID derived from the JSONL filename, assigns a separate monotonic numeric display ID on file admission, broadcasts creation and closure, and routes emitted complete lines to the matching tracked agent's parser.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L205-L251",
+          "version": "repo-lines-v1:sha256:fa410eb8b63cc76232b8540a1f4a537f519b9d868cd515067c9d2c424be549e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmY2I4NGU0ZDQ3ZDc1MzdiZGU1MDkyMjM2M2JkYWQ2YWVkM2UyMGJhZTQ1NTA4NzdmZGM2MGIzMzg5NWVjNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5YTBhYzA5NmU2ZTZjMThiZmI5MTlhZDZjMmIxMDAzMDQyOTUyNDhiZTA3ODM2MWY3ZDZhMzYwOTBkODdiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwM2MxZGQwYzBiYzNhNWE4M2VkZmUzYzk0NTM4ODZhNDZhNjZiZTkzZDI1ZjE3ZWU2Y2U3MWQ5N2ExODcyZWUifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L23-L27",
+          "version": "repo-lines-v1:sha256:05cf18c0f0c1872d6c2df75a327fdce61acd85992e0e1b0b30ae0935697ee4cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBkZGI5ZjU4N2IyNWY5NzI2NTRjMjQ4ZDExZmU4OTJhYjUyNzJkMWQ3YjNiMmQ3NzhkZjA1NDY3OGVhNWY2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQyNzdkYTAwZDNkNWU5ODA0MzVmOTU0M2Y1Yzg4ZTZiMWRlY2ZkOTljMjFkYzRmY2NjNDcwNjZlYjhhMjZiMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQxZTEyOTA1NzczNWMzNTEyMjE2NTE1OGY1YmY4MWY4MjBkOWI5YTM2MGM1M2NjMDMxZDFlZGE5ZTAyYTkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdjMDRjNmE2NTkyNGE1MmZhYjI2YWU5NDk3OGQ1YjI4M2I2ZThmMjkwMzAzZTQwYzZhM2YwNjNmMGIzMzRhZiJ9"
+        },
+        {
+          "resource": "repo://server/watcher.ts#L71-L93",
+          "version": "repo-lines-v1:sha256:afd4a3d829522b8d2b59fac71d45ac294dbf0c2fac6276e676c770445fdc3390:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGZhYTQ4NjZjNzczZGUxNGFlNjY4ZmMyMWMzYWMxZmE1OThiOWE3ZmJiZDMzZmE5NzIzYzkyZTZjZDBlZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4OGRkOTg3M2UxOTQwMTNhMGFhNTIxMmY2NzM0OTljZThhMDBlZTRjOTMyYTM3ZWY2MmQ1ZmM5OGMwMTc5NzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_609a3d4a7c0f4e9fadc659488b7d1092",
+      "statement": "Malformed transcript JSON and unsupported or incomplete record shapes are ignored; the parser dispatches only assistant, user, system, and progress records.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L137-L160",
+          "version": "repo-lines-v1:sha256:562ba6eaccc5018dbdf99eef20ec5cd03ce728444a19ef75661901b6c2f3b7e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMzdiZmExNjAwY2JlMTQ1ODRlNTdlYzUzNTcyZDM5MTFlMTkyODg0N2M0ODkxZDVlNjE3ODg5NTRlZWY4MDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZTQxOGY4ZjgyNjRlNmY5ODMyNjczZjM3NWM5NGFiMDJlN2MwNTdlNTZkOTAxMjJkNTAyNzAzNmYwMGNhZDcifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L162-L172",
+          "version": "repo-lines-v1:sha256:457d6c7adf1294691eae622e2cf1a420635d75d74aaeca8d280cfa0d270e2c95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNjExYjc4NTZkYjg1NDBhMzQ1YWYxNThjMDVmZWU4Y2M4ODlmZWNhNzE4ZGQ5YTE1OWFkMTE0ZmM4ZWU4ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2ZjhiMWQ5ODFjYWI4ZjljMWM4YzgzZDNiYWM2YjQwOWE4NTVjOTZlNmRiMmJjMzY0ZDJmNTY3NzQ4MzYwMzcifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L214-L225",
+          "version": "repo-lines-v1:sha256:09345e8c831436f9915ec1346604c994e3abd534d89bde2820130698c9b9281e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYjUxZWZlZDdmNDNjODhmM2RiMjYxZDZmMzk0ZDAxMDUxODAxOGIzMmM2OGVhNzJiZmMyZDU0ZDQxZjg3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwZWU1MTc4YTAwZjZiOTY4NDk4M2EwOWJlYTA2OGM5OWJjYjk2NmVjNjhhYjhmZWYwNWJiZTY5YmNhODYzMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlY2FhZmNhZTRlNjdlYWY0M2ZkYTFiMjZmNzg3OTE4NjZlMGUzZTdlZGQ4N2YxMzFiNTdjMzliZmMxOTE1ODIifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L299-L329",
+          "version": "repo-lines-v1:sha256:d3d25b17eefc198392db6ca35a60216cd74db1aaa604137b43c4be681b10df0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NGIwOTU5MGNhMWE1MzU3YTI0MzA1MjczODJiMmIxNTllNmU0Mjc5Y2QwOTBhZTg3ODZkNDkxMjdiZDYwZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZTcwYWZiZDZmYTA0ZTBiZDQyNzJlMzM3Zjg4OTRhMmNjYTVkY2Y3ZGIwNDI3YTkyM2Q0ZDNjNDdhM2FmZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkZjMwNjM4NWE4N2U4Mzg0ZmUwZDhlNzE0NDg0MmFlMGMyMWQ3MGY3NmYzOTFjZmMzNGI3ZDc2ZGMyNGYwMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a3006a6331d4656ba120144e9e5f71a",
+      "statement": "Assistant tool-use blocks emit active status and per-tool starts, classify configured read/search tools as reading and other tools as typing, track tools by tool ID, and start a 120-second inactivity fallback; text-only assistant output without earlier tools in the turn instead uses a five-second waiting timer.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L162-L211",
+          "version": "repo-lines-v1:sha256:300c4f706e488c54307baded7286a5562d111d91d647976e6ae616d627a35450:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNjExYjc4NTZkYjg1NDBhMzQ1YWYxNThjMDVmZWU4Y2M4ODlmZWNhNzE4ZGQ5YTE1OWFkMTE0ZmM4ZWU4ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMTQ0ZTIzMmZlYzhlYjRmNTFlMzQ2MGFmZmQ2NDE4Y2YyMmU0NzAwMGE4MWQ4MGYyOTE4ZWE3Y2I1OWQzMGIifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L4-L11",
+          "version": "repo-lines-v1:sha256:69b40a04ff0aeb0af7a2a18b48f904aefbacc79ada96d79f94da5fe94bccce1a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWEyYWJhZDdkM2JiYTE3ZDJmY2QxMDBmZWExOWUzOTFlMzIzN2Y0ODRkZTdkYTU0NDNhNGQxMmQ1Yjk1MmIxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTYyZjE2MTVmOTk3MmRiYzE3YjI1OGQwMWZlYjY4Njc1N2NjNTMyNzNiYTNlM2ZlNjkxZjhmODQ0NDk1MDdjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY1MzBjMDc2MmZhNDAzZDVjNTg3ZWUxNDA4ZDA3M2MxYmE3M2JiNmY1N2YwZTMwYzQwY2Y1ZWZiMTUwMmU4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzk4NWM4Yjg5ZGQ5YzZiYTczZWU1ZjljZWRmZjE3NDUzOTNmNThiZTUyYjgzOTIzODc5NjMxZmM0N2U2ODVkMyJ9"
+        },
+        {
+          "resource": "repo://server/parser.ts#L64-L98",
+          "version": "repo-lines-v1:sha256:2c18b38f9c176ba7a09be18b6006d67824ddac8f1cecf15f0f1765176921031e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3M2VhMzQ5ZjE0MTM0ZmQzZDBmOTFkODc0OGE2N2M3OTM5NjNkODk4NWNlMTc5N2MwMDBlMDZjZWFiMjhmNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZDdiYzI4MGQ1YzMyOGJjNDc5N2YwYjk1ZGRjNGMxZmU2ZDkxYzIwOGM4NTM3MDMxMjdkZTNlZTMzZjY3MzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea6b8a86b55c49bbbfa1e262871ff042",
+      "statement": "A parent tool result removes the tracked tool and emits agentToolDone after 300 ms; a new user prompt clears activity and relevant timers, while system turn_duration cancels timers, clears active parent and subagent tools, and emits waiting.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L214-L296",
+          "version": "repo-lines-v1:sha256:d2152b81dc534d695ac9734ef7c185dc0af28a4e90b19dfd327c6f7898ee5dcd:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYjUxZWZlZDdmNDNjODhmM2RiMjYxZDZmMzk0ZDAxMDUxODAxOGIzMmM2OGVhNzJiZmMyZDU0ZDQxZjg3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljOWU0NWFjZTM4ZWIzNjBjZThiMTU4NDEwODUxOGI5NmRlMzRiNTdjYWZlZTY5MDI3M2YzMTViNGZlYjNlZmUifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L392-L410",
+          "version": "repo-lines-v1:sha256:6d09a28d767923ad3f212e0e22ed01cc80ab0eb21eece6b24f1a1671d4befdfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmOWM3NjMzMjZjYjg3ZWVlNzIyYzFlZmZlOGNjMjQ2NjE1MjA4NjQ0OGIzMTA0YTdlNjhiZjU0YmYwMzIwZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_148b899a3aba4e60a67a8c7f8c9cf09e",
+      "statement": "After seven seconds, permission inference scans both active parent and Task-subagent tool names and emits agentToolPermission only for non-exempt work; Task and AskUserQuestion are exempt, and bash_progress or mcp_progress restarts the permission timer for an active parent tool.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L100-L135",
+          "version": "repo-lines-v1:sha256:f8f6fcc74fc694fd9d9e1d2d26269c1e5e3494baddfbc555b4a3179df2bc11d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMmE1NTcwYTY3M2U3NjJiZWEwMDEzMzBlNjVmY2JjYzcwNDI4NDRhMWM1YTc4NjVhZDA2YTZmMWU4ZTRjMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjN2ZmOTdhMGM2M2MwZmU4NTNjMWE2MDFmYWJkOTA5NjM1OTYxZWVhZTlkMmUyNTJhYWQ1YTUyZjk2NDQ3ZTYifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L312-L318",
+          "version": "repo-lines-v1:sha256:a5efd27f1310d501a3eaaf46b1e02fef081c95f9f512625a05012ae873ca70e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFjNWRlOGJiZjIxOTBkNjJmMzJlYWEwOTRmZWEwMzkwNmRhZGJlMzc4ZDA5YTQ5OTYzY2I1N2JjNGU1NzEwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZjNGViNzhmNzBlNjBjZTc3YmFiM2IwNmI3MGNjZDg0ZTM4ZDBhMjY4Y2ZlZjJhZDI0MmE5MGMyMTI4ZWFkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjMzOGU2Mjc1NjIzOTQ4MzVkY2QzYWZiMjNiZWQ1NWNlYWQwODQwZTFhN2YzY2FiOGI4NGQ0MGY4MTNkMjYyMyJ9"
+        },
+        {
+          "resource": "repo://server/parser.ts#L331-L369",
+          "version": "repo-lines-v1:sha256:936feab1e4d69cc64ca4e59795932ec084552c58e61ebc8f2cd212f701abb325:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NmM2M2Y5OTg1NGQ1YWZiNTMxZGNhZWNjNGFiNzUyNjNkMmMzMzZhMmQyYmI5OTQzMzU5NTM1MWYwNDQ1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MDZhZmFiMGVlZDQ1MmU5OTFhNmM1N2MwYjdhZjg5NTI4MGI3MGE0MGMzNDY1ZWEyZDc1NmI5MjhhZmU4NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2ZDBiM2VhNzJmOWE2ZGM2NmUzYjcwMzczZGNjMTlkYTQ0ZWE4YjFkMGZkMGY5NjZmZDI0ZWVkZmY3NWEyYzAifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L4-L16",
+          "version": "repo-lines-v1:sha256:d47a22c2ef385330261878a83c2dc181a44ee8ef7a27cd9e5763cad8990449ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMmFiYWQ3ZDNiYmExN2QyZmNkMTAwZmVhMTllMzkxZTMyMzdmNDg0ZGU3ZGE1NDQzYTRkMTJkNWI5NTJiMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NmZlZGVlMDZiMzM0YWEyYmQzZGNlMjkzYzkwZmI5Y2FhYjUxZTBlNmExOGU4NTRjOGZmYjBjMzk2NGZkNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2NTMwYzA3NjJmYTQwM2Q1YzU4N2VlMTQwOGQwNzNjMWJhNzNiYjZmNTdmMGUzMGM0MGNmNWVmYjE1MDJlODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMjU1MDc3ZmE2NzE3YmNmYjkyZDFiOWYwNzNhZmI0NjA0MzczY2YxNDgwMGZjZTY1YjdhNzVkNWI5MzM5NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b31df3915774af09bcc88f4d5e02541",
+      "statement": "Nested progress is correlated to an active parent Task by parentToolUseID: nested tool uses emit subagentToolStart, nested results emit delayed subagentToolDone, and completion of the parent Task clears its nested maps and emits subagentClear.",
+      "evidence": [
+        {
+          "resource": "repo://server/parser.ts#L227-L251",
+          "version": "repo-lines-v1:sha256:c4847378fd6d840c4f03b8af38a59b3dfee9123db587dd62f59e2fbd36c27b58:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYTMwNzA5ZWJjYTJlNGE3YzNiZjU4NDAzODVkNjFhZDQ4MDlmMzNlOTZhYmQ0ZWNlYTIzZjVmYzMwYWZmNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZmZiOTI1ZWExMmExYWQ1MGZhZjQzYmY3YzY0NDAwY2RlODI2OGYwYWQ1ZDExYmJlMGFjMGZhMzUyODhlNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2OWZjNGYxYzBiN2U2M2QxNDg5OTE5MmQ3MmZkMjBkNjQ0MDgzOTU5MGQ2OGFiNGJhNTljYWI5NGEyMTlkYjQifQ"
+        },
+        {
+          "resource": "repo://server/parser.ts#L299-L390",
+          "version": "repo-lines-v1:sha256:78c49435d100055fe425ce282427c958aa40df0663103029c954edf73361895e:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NGIwOTU5MGNhMWE1MzU3YTI0MzA1MjczODJiMmIxNTllNmU0Mjc5Y2QwOTBhZTg3ODZkNDkxMjdiZDYwZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3M2M2NzA4NTFiMzU3YjkzM2RhMTA0NmE1NWM3Zjg0YWFmNDAwZTJkYWFjN2I1YTM3YTU2OTQ3YWJlZWY3NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a51e0f5b51524f448ac48b8dca25024b",
+      "statement": "The WebSocket adapter redispatches parsed frames as browser message events, and useExtensionMessages applies membership, parent tool, waiting, permission, and subagent messages to React overlay state and OfficeState; tool starts are deduplicated by tool ID and completion marks them done until a clear.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L115-L326",
+          "version": "repo-lines-v1:sha256:06db13035de3ba2abc9c5f846065c3fe16c57340a59bf29c0a37755c6c21910d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyYzA4ZTYxY2Q4YWJlNWZmNDg2MGUwYzM0YmU3YWNlNmNjNDE3N2VmMjM4Mzc1MWM1ZGY3MDE3MTI5MzgyMTlkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4NDdmNmMzNDMzMTNkYzY1MGFhMDc0NmViZmNmZDhmMDdiYmJkMTMwNzA5OTJmNGYyNjQyNjVlYjMyNmQ3YjFjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MDUwM2E4MDAwYWVkMGUzNmE3ZWMyN2YxNzc1ZWYwNDg3MTY0YTdlYTQ5MTczNzg2ZjAzZGU2YTgxMDQ3NjA5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyNWU3ZThiNDM4ZThlYmQwNDZjZjc5ZDA5OWE2YmY0NzU2NDU3ODFhN2Q2YWE5MDI5NGE0NzIyYjQ0ZjZiNTRmIn0"
+        },
+        {
+          "resource": "repo://webview-ui/src/wsApi.ts#L9-L35",
+          "version": "repo-lines-v1:sha256:b454908bbd9ce79b2403d325f2d876cb12560936e96bea687cb900f5864972f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmI1ZmE5Mzc1MDk3MjUzNzk2OTdhN2UwNjk5ZDg2MzZkYjJjZjJlMmE5ZDhhMDIxNzE4NDdlZGQxZTA4NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NzA1Y2I1OWE2ZjVjZWNhZTE4YTgxZjQ1MWIwNmI1ODNiODg2MmZmNGFiNDQwYmQ4ZWZiYWRmYzc5YTMzZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjZjhiOWE1ZjExYTkyMzQ0YTliNTVhZDlkODAwNTJkYTY0N2JhMDQzMDU1NDAxYThjNWQyMTc3OGYxNjgwNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39a9541501e74d1380fa271f78e7a3fa",
+      "statement": "A Task-formatted parent tool creates one visual subagent keyed by parent agent display ID and parent tool ID; OfficeState gives it a negative character ID, inherits its parent palette and hue, and removes it by the same correlation key.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L167-L188",
+          "version": "repo-lines-v1:sha256:c5edb094fe001662d14af393c338419b67f815cf7070e278260e2f4ea12168bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZTgwMjkxY2EwZDFiNWU5ZjVlYjJmYzBkMjdhMDFjYWUzZWQyNGNiNGZkNjRjNWUwMDg3YWEzOWU3YzBjYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOTQxZWI2ZGVkNTU2NWE4NjY2NTFmN2FmNzhiMDA5NDdmZDkxOTM1MmExZGRhNmFkNzczODU5NDQ3ZjE2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhOGJhODE1Y2Q1M2Q3ZGVmZWU3ZjU3NWNhODYzMjI2ZmRkODUzNWM0YjllZmYxYmMyODVmMDVhNDQ5YzBjMWYifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L360-L455",
+          "version": "repo-lines-v1:sha256:a0fbb02ae6ab95aa101aed2dde48d39d57544aa3f7165d065601bc44a8dd9774:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTc3ZGRmYTkzNjNjNjNlMWQ1OGY3OTgzNmMxNTBlMzQ1YmNlMmMyZTYwMTZmYWYyZTllNjRkOWU4NTY5MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNWZlZTk1M2YzN2ZmM2M1NTkwNGQ0ZThmMmRhYWMyMjJkMDZkZDE3NjlmZTZiZTU0OWRlOGQxNGY0MTFiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZDM5ZGFkODVjZTM2YTVhYjlhNzcyMTRjMjQ2ZDhlZDAyYWE3MTZmZGM0MTVkMjBjNWMyMGFlN2U1ZjU3YmUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L41-L45",
+          "version": "repo-lines-v1:sha256:5ee56b503009c3ae0e35a342ed7bd3671a550b675f4f358aa7e57995fb222086:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjRmYjU3YTIyYzJhZDU4YmYwZjFhYTczMTJmZDA1ZTI2MTM5NDVlODBlMjQzZjViZTFlOGU2ODk3YTUzMDBhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIzNmIwZmM3YTU0OTkxZDQ4MWQ2MmYxYTk0OTQ5ZTQ4MzEzMGNmNWYwMWU0Yzg4ZWU3NmNkZjMwYzIxMjk2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODUyMTZkZGY4MTJjZTg5ZWIyYmVkMjg5YTAyM2YwYWI1YzE3MWUwY2RhMzEyMmRlOTg4OTE5NTc5MjZjNjhjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTA0OTZiNDEwNmQzZmRkOGQ2YTI2MjliMWZjMDU4MjNkODFiMjdkY2RiZDhlNzI5ZDBjMGU1NGZkNzU1M2Q2YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5014adbdcdba49d0a389d90f8fbb5067",
+      "statement": "The server sends existingAgents before layoutLoaded during initial sync, and the UI buffers those agents until it has rebuilt the layout so persisted seat metadata can be applied after seats exist.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L141-L162",
+          "version": "repo-lines-v1:sha256:f2a01c7457dd9722ff93b6a1efd4ab38b0c78f0ea0dd7740c52c3ef9af67d774:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNzk5OGI3OGQ4NzJhOTlkNTAxOTU1N2M5YTk0ZDRiZTRhMTZkMTFiZWE5NDZkYmVlYjYzNDA5ZGY1OTAxNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjM2I0ZjcyNWJhZjIyYzc1OWJiNTk2YjE0NWQ5NDQ5OTUwYmRmNjMzNWQyYWRlZDM2ODdmNzNlYzlkMzU2MjkifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L148-L166",
+          "version": "repo-lines-v1:sha256:4dfaebce1acf99be046a03b79a3af760a41eb7ee3510d9d5e5e831c8d17c81a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOWUyNGViZjdjZDFiZmU1Y2Q5MGYxNzZmMmQ1NTE1Y2E3Y2RmZTIxNDkwMmZjMDIyMzUyOGRkNGM4ZWQxMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmQ5N2I1ZjM1ZjUzM2E1YjY1ZTEwZDEwMTQyYzdjYzdjMjlhYzcyMTk3MGVlM2U3OTkwNWIxOWQ0MzIyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYjY3OTdmNTYxOTY2OGMyMTQwNDVkMGQ3YjhkYjkwNTkyOGU1YjI3MmFlNzM2Nzk2ODE0NGIyMDg2MWI0YWEifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L82-L114",
+          "version": "repo-lines-v1:sha256:5cbb31df51503d2e443c56158e402924ffda163011dda5bb9c640fa3e8ca04e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5ZTM0MTkwOGI0NzM4MzJiMWQ2ZGYwZTI3YTZhN2Y4MTc0NTgyOTMzODYxNmNmYmQ0ZThjOGFhOGMwNzc1MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Njg5M2Q3ZDM1ZTJjNzMxNDMwZjFkNjFiNjNiMWE3MWY0ZDI2NzVlODQwNDA0MmRkY2NlYjUyMmQ1MTdjYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afb60b22bd254269a81b27b130a1ce85",
+      "statement": "OfficeState renders waiting and permission as character bubbles, makes active state affect character activity and render-only nearby electronic on-states, and expires a waiting bubble after the configured duration.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/constants.ts#L99-L109",
+          "version": "repo-lines-v1:sha256:4278d4faf0ef7d21d8cda282d8a74ed32b922a8c44ed577e15b89f6102e63b4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YmRhNGExYWU3NzYzYjIwOTRjMWY2NDZhZmEwZjA1ZTE5MDQxYWJjYzk5MjM1NTAyMGIyZmQ4OGIzMTY2MTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwOTFiMGY4MDQyNTc5NDUyMjAwODc4M2YxYWU0OGVmZDMxOGVkYWRkZTE4ZDAyZjJmYjFiZmQ2YjdkMzgwZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMDc5Njg0OWNkM2YxMDE2YzQ1MDA5NGI1YTQ2MWVhZDA4ZTlhMjkyZmExZDc0YTZiYTUwZDVkMjQzMTk0OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxZTZhNjZjZDkxM2M1YTAwMWY5YzBkMTk4NzZmNDIzZjRlMjIxYjgzM2E1M2M1MWMxYzM0YzkwNGMyMDViNmUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L497-L510",
+          "version": "repo-lines-v1:sha256:ea69953de7067bf7dd026073ec2a85203aad23b4626d5770e117f1b1f7943e12:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0YWQ2ZDkzY2U0ZDE2NjRjOTE5OWU3Yjc2MTVhMTVmNTI2ZjhmYzZlNzc4ODZkMGRkYmE1MWE5MjIzMjc0MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNmYxZTVmOGU1OGUyNTNiMWU4ZjI4ZjRiMTkwODAwMTMzNDhkYTI1MGM2Y2NkOTFhOGI5OTk2ZTA1MzIzOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZDUwNmJiMjZmYWE3NTk2ZTFkNWM0MGU5N2QzMTYyMTZkNTY3NzY4NzUwYjNhYWI4YTg0ZDgyNjE2MmRhZDkifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L512-L570",
+          "version": "repo-lines-v1:sha256:a8795f020fc606bc6026226209c79719cc176c49a5bb473eb67b6a66107b2e6f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxNjgyOGFiYzI0Yjc5ZDkzYzUwMTNmY2FlMjQ1N2E2NTU5NDMyMmEwZjMxODc1NjljNWVjNWM3OTI5MDBmZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZmI2Mjg1ZWFiZDE1N2UyNWQxOTZlYjZiMTA5ZmQ3NTllZTQwMjVjZTMwZmY1MTE5MjE3MmEzODhiMTc2Y2IifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/engine/officeState.ts#L579-L613",
+          "version": "repo-lines-v1:sha256:2dbf62508f23bd7fc2f5b1d43d0b0caa03c501abc81e71a677aabb67cc8d84e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5OTE0YTAyOGNkMjBjMzk0N2JlYWVmMDFhNjM0Yjk2M2JiY2Q1YjQwZjZiZWQwMDZkYWEyZGQ4Y2QxMDU5NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMmRjNTE1Mjc5YzliZjgyZDI3YjJhMTk0ZjhiNGJhZDlkZmIxMTFiNWQyMDA3ODEyNTg4ZWFmNzQxNDM3ODYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T16:48:54.278Z"
+  }
+}

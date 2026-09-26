@@ -5,8 +5,6 @@ import { join, dirname } from "path";
 import { homedir } from "os";
 import { fileURLToPath } from "url";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
-import { JsonlWatcher, type WatchedFile } from "./watcher.js";
-import { processTranscriptLine } from "./parser.js";
 import {
   loadCharacterSprites,
   loadWallTiles,
@@ -14,15 +12,12 @@ import {
   loadFurnitureAssets,
   loadDefaultLayout,
 } from "./assetLoader.js";
-import type { TrackedAgent, ServerMessage } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = parseInt(process.env.PORT || "3456", 10);
 const IDLE_SHUTDOWN_MS = 600_000; // 10 minutes
 
 // State
-const agents = new Map<string, TrackedAgent>(); // sessionId -> agent
-let nextAgentId = 1;
 const clients = new Set<WebSocket>();
 let lastActivityTime = Date.now();
 
@@ -60,20 +55,7 @@ function loadLayout(): Record<string, unknown> | null {
   return loadDefaultLayout(assetsRoot);
 }
 
-function loadPersistedSeats(): Record<number, { palette: number; hueShift: number; seatId: string | null }> | null {
-  if (existsSync(persistedSeatsPath)) {
-    try {
-      const content = readFileSync(persistedSeatsPath, "utf-8");
-      return JSON.parse(content);
-    } catch {
-      return null;
-    }
-  }
-  return null;
-}
-
 let currentLayout = loadLayout();
-const persistedSeats = loadPersistedSeats();
 
 // Express app
 const app = express();
@@ -98,15 +80,6 @@ setInterval(() => {
     ws.ping();
   }
 }, HEARTBEAT_INTERVAL_MS);
-
-function broadcast(msg: ServerMessage): void {
-  const data = JSON.stringify(msg);
-  for (const client of clients) {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
-    }
-  }
-}
 
 function sendInitialData(ws: WebSocket): void {
   // Send settings
@@ -138,19 +111,9 @@ function sendInitialData(ws: WebSocket): void {
     );
   }
 
-  // Send existing agents with persisted seat metadata
-  const agentList = Array.from(agents.values());
-  const agentIds = agentList.map((a) => a.id);
-  const folderNames: Record<number, string> = {};
-  const agentMeta: Record<number, { palette?: number; hueShift?: number; seatId?: string }> = {};
-  for (const a of agentList) {
-    folderNames[a.id] = a.projectName;
-    if (persistedSeats?.[a.id]) {
-      const s = persistedSeats[a.id];
-      agentMeta[a.id] = { palette: s.palette, hueShift: s.hueShift, seatId: s.seatId ?? undefined };
-    }
-  }
-  ws.send(JSON.stringify({ type: "existingAgents", agents: agentIds, folderNames, agentMeta }));
+  // Catalog agents are loaded from Embers REST in the UI. Keep the empty
+  // membership snapshot so the existing visualization protocol stays intact.
+  ws.send(JSON.stringify({ type: "existingAgents", agents: [], folderNames: {}, agentMeta: {} }));
 
   // Send layout (must come after existingAgents — the hook buffers agents until layout arrives)
   if (currentLayout) {
@@ -162,11 +125,13 @@ function sendInitialData(ws: WebSocket): void {
 }
 
 wss.on("connection", (ws) => {
+  lastActivityTime = Date.now();
   (ws as unknown as Record<string, boolean>).__isAlive = true;
   ws.on("pong", () => { (ws as unknown as Record<string, boolean>).__isAlive = true; });
   clients.add(ws);
 
   ws.on("message", (raw) => {
+    lastActivityTime = Date.now();
     try {
       const msg = JSON.parse(raw.toString());
       if (msg.type === "webviewReady" || msg.type === "ready") {
@@ -202,66 +167,14 @@ wss.on("connection", (ws) => {
   ws.on("close", () => clients.delete(ws));
 });
 
-// Watcher
-const watcher = new JsonlWatcher();
-
-watcher.on("fileAdded", (file: WatchedFile) => {
-  if (agents.has(file.sessionId)) return;
-  lastActivityTime = Date.now();
-
-  const agent: TrackedAgent = {
-    id: nextAgentId++,
-    sessionId: file.sessionId,
-    projectDir: dirname(file.path),
-    projectName: file.projectName,
-    jsonlFile: file.path,
-    fileOffset: 0,
-    lineBuffer: "",
-    activity: "idle",
-    activeTools: new Map(),
-    activeToolNames: new Map(),
-    activeSubagentToolIds: new Map(),
-    activeSubagentToolNames: new Map(),
-    isWaiting: false,
-    permissionSent: false,
-    hadToolsInTurn: false,
-    lastActivityTime: Date.now(),
-  };
-
-  agents.set(file.sessionId, agent);
-  broadcast({ type: "agentCreated", id: agent.id, folderName: agent.projectName });
-  console.log(`Agent ${agent.id} joined: ${agent.projectName} (${file.sessionId.slice(0, 8)})`);
-});
-
-watcher.on("fileRemoved", (file: WatchedFile) => {
-  const agent = agents.get(file.sessionId);
-  if (!agent) return;
-
-  agents.delete(file.sessionId);
-  broadcast({ type: "agentClosed", id: agent.id });
-  console.log(`Agent ${agent.id} left: ${agent.projectName}`);
-});
-
-watcher.on("line", (file: WatchedFile, line: string) => {
-  const agent = agents.get(file.sessionId);
-  if (!agent) return;
-  lastActivityTime = Date.now();
-
-  processTranscriptLine(line, agent, broadcast);
-});
-
-// Start
-watcher.start();
 server.listen(PORT, () => {
   console.log(`Pixel Agents server running at http://localhost:${PORT}`);
-  console.log(`Watching ~/.claude/projects/ for active sessions...`);
 });
 
 // Idle shutdown
 setInterval(() => {
-  if (agents.size === 0 && clients.size === 0 && Date.now() - lastActivityTime > IDLE_SHUTDOWN_MS) {
-    console.log("No active sessions or clients for 10 minutes, shutting down...");
-    watcher.stop();
+  if (clients.size === 0 && Date.now() - lastActivityTime > IDLE_SHUTDOWN_MS) {
+    console.log("No clients for 10 minutes, shutting down...");
     server.close();
     process.exit(0);
   }
@@ -269,7 +182,6 @@ setInterval(() => {
 
 // Graceful shutdown
 process.on("SIGINT", () => {
-  watcher.stop();
   server.close();
   process.exit(0);
 });

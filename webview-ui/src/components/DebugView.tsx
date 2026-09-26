@@ -1,5 +1,4 @@
 import type { ToolActivity } from '../office/types.js'
-import { vscode } from '../vscodeApi.js'
 
 interface DebugViewProps {
   agents: number[]
@@ -8,6 +7,7 @@ interface DebugViewProps {
   agentStatuses: Record<number, string>
   subagentTools: Record<number, Record<string, ToolActivity[]>>
   onSelectAgent: (id: number) => void
+  onCloseAgent: (id: number) => void
 }
 
 /** Z-index just below the floating toolbar (50) so the toolbar stays on top */
@@ -57,6 +57,7 @@ export function DebugView({
   agentStatuses,
   subagentTools,
   onSelectAgent,
+  onCloseAgent,
 }: DebugViewProps) {
   const renderAgentCard = (id: number) => {
     const isSelected = selectedAgent === id
@@ -86,10 +87,10 @@ export function DebugView({
               fontWeight: isSelected ? 'bold' : undefined,
             }}
           >
-            Agent #{id}
+            Ember #{id}
           </button>
           <button
-            onClick={() => vscode.postMessage({ type: 'closeAgent', id })}
+            onClick={() => onCloseAgent(id)}
             style={{
               borderRadius: 0,
               padding: '6px 8px',
@@ -98,7 +99,7 @@ export function DebugView({
               background: isSelected ? 'rgba(90, 140, 255, 0.25)' : undefined,
               color: isSelected ? '#fff' : undefined,
             }}
-            title="Close agent"
+            title="Close Ember"
           >
             ✕
           </button>

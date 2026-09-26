@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3ee6ce30be3cf4cb8f289dcbdd061b19ffd69c2443c6b4fc33728c0e368de05d",
+  "claims": [
+    {
+      "id": "claim_b3ad747616214717a8917e44fbba8c85",
+      "statement": "Pixel Agents has two independently installed npm packages: the root package provides the server/build tooling and `webview-ui` provides the React/Vite application dependencies; root `dev` runs the server and Vite commands concurrently, while `build` runs both builds in sequence.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L6-L15",
+          "version": "repo-lines-v1:sha256:30676754e4f199d0a891db7e22ce68fad1d85f195712dcaf9b7e28d85b640615:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNzQyMjBiZjJiMmFhYjhhNzZlYTIxZjNiZDYwMGM3NzIwODVhZjU4ZDdjNDkwMzNiYjM2YjUzM2Y3ZWZkMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNGY2YTQ2MmQxMmUxMTM3NTBiNjU0M2M0M2M0MzA0ODYyMjkxMTViMjVhNWU3YTNhNWMxZDU3MmE1NWY5MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5Y2QxNmM1ZmQ2NDQzOWIyMzNlMTc1MjEzMmU5ZWQ2ZmVlZmY2YjhhNmE5MzIwZTE3MDRlNjQ3ODQ3YjYwNjUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/package.json#L1-L29",
+          "version": "repo-lines-v1:sha256:2efd1f5a91b2fdeb564f800fae783439014bbdac77a1498dc28dbe3462566226:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3242ee10bcf4c22933e1a3dbb2e1120",
+      "statement": "The production build bundles `server/index.ts` to `dist/server.js`, builds the UI into `dist/public`, copies `public/assets` into `dist/public/assets`, and `npm start` runs `node dist/server.js`.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L10-L15",
+          "version": "repo-lines-v1:sha256:5577900b649419147a831f5fc451919effd28ee3c6f0271cf7c95fa630e24aed:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg3ZWFmOGQ2MThkNTc2YWMwOTM3NWNjMDE1YWMzNTFiYjE3YzQwMTYxYzBjYTJiYTIyOTc2MDY4OTk4MDZjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY3NDIyMGJmMmIyYWFiOGE3NmVhMjFmM2JkNjAwYzc3MjA4NWFmNThkN2M0OTAzM2JiMzZiNTMzZjdlZmQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjhmZGRiNjRkNGEwODZkNDJiZmIxZTJkZjcxZDM2YzUxZjdhZDJjYTExZjFmNTA1MzNlNWVhMzIwODY3ZDBjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjljZDE2YzVmZDY0NDM5YjIzM2UxNzUyMTMyZTllZDZmZWVmZjZiOGE2YTkzMjBlMTcwNGU2NDc4NDdiNjA2NSJ9"
+        },
+        {
+          "resource": "repo://webview-ui/vite.config.ts#L4-L10",
+          "version": "repo-lines-v1:sha256:fc3a5e120216824c7037b04f556dcd6e70666ba206a7f83821e160264fa27a1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjZWNiMTQ0YTQ2ZjVkY2YxMmE2MTY5ZmNlZWQ3Njk1ZTgyOTRiMDkwZGU3NmYzNjYxY2RkMDI0OTMwMDE0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRiOThhZmI1M2I0Y2EwOTA2ZTMzMjA1ZWVjMmM1ZjcyN2JhNmZjOGM1MDVmODAzMDU2MmRhY2ZiODdhMGQxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzMzODJjZWM5N2NmZGQwZTM3NGE5MGIxNGNkMDAwMDA4NzQ1YzBkYTUzZWI1NmIwZmI2YTFjNTBjMDA5MzQwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU4MGI3NjUxOGRhZTk3OWZhZWJkMDIzNjdhMjkyOTJhNTBkOTc2MDkyMjUxYTM4YTZjZTMwODgwYmE0MjgyNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8715d85823bb46d0ab17ceb59be275dc",
+      "statement": "The standalone UI connects to `ws://localhost:3456` in Vite development and to the current page host otherwise; it sends `webviewReady` on socket open and dispatches incoming WebSocket data as browser message events.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/main.tsx#L1-L12",
+          "version": "repo-lines-v1:sha256:ca5c043a94fa18f0335ce1fc998f655f9ff78f3b5502cc203d6b7c268a2b993c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNjhkOGQ2OTM0MDMzYmIxNGFlMWRmM2Q5MGNiOTg1OWE1MWUxMWIwNWQxZmZkZjcyNWU4NjdkMDk2YTU0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjYzc0MGQ4ODEwMTI2MTg1ZDg5YWI4YzQxNjZjNzY0MTdlODE5MWFiNmYyMjZkYmE4ZjQxYjI5YmIwNmIzYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/wsApi.ts#L1-L35",
+          "version": "repo-lines-v1:sha256:e2249e84abff791b1fb05f452531b324db8df718f0d5ce5a18fd57903bfb378c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjODE3M2VlOGZmZjdiM2RmOTc1OGQyMTM4NzQ4MmJlNjNjZTllOWI5NGYwYzkzMzIxZTRkMmUyZjllOTg0N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjZjhiOWE1ZjExYTkyMzQ0YTliNTVhZDlkODAwNTJkYTY0N2JhMDQzMDU1NDAxYThjNWQyMTc3OGYxNjgwNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b44fb31ecb204c1dba6e8f91daaaa5b5",
+      "statement": "At server startup, the asset loader uses `webview-ui/public/assets` relative to the server module whenever that directory exists, otherwise `public/assets`; it loads character, wall, floor, and furniture data before clients connect.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L29-L41",
+          "version": "repo-lines-v1:sha256:40262cb128e409894a468236a809a7ea27786bf439ee728046882228bcbdbd59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2Njk1ZDg3OGJjZDM2MTI0ODY5MTNkNjVkYmY3MzM1NTY2NThlYmRjNzJlMTUzMTg2MGMyMTkyZGY3YWQwOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNmJkNmJjMDY4NThiNmJhMmQwYTAzNzY4MDgxNmU0Mzc1OTNmM2NhMmY1Y2MwYWI3ZGFiMTY0N2RjMzVjMGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMGJlMThkMjhjNmVhMDc1ZGNkNWM2OGQwMWY3MDkyMGM2OGQyZjIwZmRkN2M3MDYzYWQ2Mjc0OGIzZmY1MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZDNmYjM2MmQxMGQ5ZGY5ZDM5YWU4YmQwZDVmN2VjY2JjOWZiMmJhZDQzZTJkNGEwNWM4OWU5ZTYxN2JmOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_054b4ce1c3134199b3508ab9a7c10ac8",
+      "statement": "The server decodes six required character sheets and a wall sheet into sprite data, while floor tiles, furniture catalog, and default layout are independently optional loaders that return null on absent or failed files.",
+      "evidence": [
+        {
+          "resource": "repo://server/assetLoader.ts#L101-L158",
+          "version": "repo-lines-v1:sha256:ed746c384ca4416413b2117a941ac71552e2b6846477a1f3853d575645431ca8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NmU5NjZkNDUxZjRlODhmMmYzM2JjZmExYjlhYTZkYTA3OTNkMzJmNjQyNWUxMzZhNmRkYzhkYmNiYjg0ZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0OGEyOTg1MDFkNDM5ZjQ5NDVmOGZmZDZiYjJjYjJhYWZkMzIzNjY4OWE2Y2RlYmQxMTgzN2Q1Y2RiZDVlNDEifQ"
+        },
+        {
+          "resource": "repo://server/assetLoader.ts#L161-L247",
+          "version": "repo-lines-v1:sha256:e07869f893248e0891a15ad1a4490011b5148534ac64bfe03ec265e7a9b8af30:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYjM2ZmE1Yzc1MDk5M2NlMDYyYmYxMDBiYzg2ZjVmMzVkNjE1YjU5YzFhMzY4YjUwNTVhZDIxZjJmOGYzYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZmFiODNkOWQwOWZlMWNiNzE1ZTRlMjIzMjdmNGU5YTZmODA0MTVlYzY1MGMwYWJjNmFkNDRmNGY4ZThhNDAifQ"
+        },
+        {
+          "resource": "repo://server/assetLoader.ts#L250-L301",
+          "version": "repo-lines-v1:sha256:c6a5025ec9d167193c8157ffa1499be2af7d1f0b68d4b389ca288f8e94c09fe2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZjk1YzBjODE3YWM1OGU2ODY4NjJhMWM2OGVjNzU2ZTRmYTFlNGQ1OWI2MDZlZGY1NjA3NTU2YWM2ZDdkZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0425562f4aba4a218ed03e0d4f3cbcb0",
+      "statement": "On client readiness, the server sends available asset messages followed by existing-agent metadata and then layout; the UI buffers existing agents until layout is loaded so persisted seat IDs are applied after layout seats are built.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L111-L162",
+          "version": "repo-lines-v1:sha256:4ba60cb05c9952e53fbecb49447a3516bec5e254429d8fc2a1d996c092a5fe5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMTJiYzgzYjQ0YmUzMTA1MzIzMjk0YjczM2E4NzE1ZmZjOTgxYTY4ZGIzNjNjM2I2N2FiOTI2NTI3YzI1NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjM2I0ZjcyNWJhZjIyYzc1OWJiNTk2YjE0NWQ5NDQ5OTUwYmRmNjMzNWQyYWRlZDM2ODdmNzNlYzlkMzU2MjkifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L148-L166",
+          "version": "repo-lines-v1:sha256:4dfaebce1acf99be046a03b79a3af760a41eb7ee3510d9d5e5e831c8d17c81a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOWUyNGViZjdjZDFiZmU1Y2Q5MGYxNzZmMmQ1NTE1Y2E3Y2RmZTIxNDkwMmZjMDIyMzUyOGRkNGM4ZWQxMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmQ5N2I1ZjM1ZjUzM2E1YjY1ZTEwZDEwMTQyYzdjYzdjMjlhYzcyMTk3MGVlM2U3OTkwNWIxOWQ0MzIyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYjY3OTdmNTYxOTY2OGMyMTQwNDVkMGQ3YjhkYjkwNTkyOGU1YjI3MmFlNzM2Nzk2ODE0NGIyMDg2MWI0YWEifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L82-L114",
+          "version": "repo-lines-v1:sha256:5cbb31df51503d2e443c56158e402924ffda163011dda5bb9c640fa3e8ca04e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5ZTM0MTkwOGI0NzM4MzJiMWQ2ZGYwZTI3YTZhN2Y4MTc0NTgyOTMzODYxNmNmYmQ0ZThjOGFhOGMwNzc1MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Njg5M2Q3ZDM1ZTJjNzMxNDMwZjFkNjFiNjNiMWE3MWY0ZDI2NzVlODQwNDA0MmRkY2NlYjUyMmQ1MTdjYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f35faf694814e05a5129d0fb5fae51a",
+      "statement": "If image assets are unavailable, the UI has explicit visual fallbacks: hard-coded palette-swapped character templates, solid gray floor tiles, and solid-color walls.",
+      "evidence": [
+        {
+          "resource": "repo://webview-ui/src/office/floorTiles.ts#L13-L54",
+          "version": "repo-lines-v1:sha256:8b77cf94ebebdb4e25b3898765925b3f60cf2f548e272a7d58a2100374ebb009:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MjA0MDEyZmFlYWVkOWY2ZTRjMjhiOTc1MDNmZGEzY2E2MmU1YmNhNmJmNWExYWY2NzQzZWNmMGE4MDVlMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NThiZjk1ZjQyYzgzMzA3NzMyNjBiNDk5ZWM5YzU0MTMxMDliODQwOTFkYWQ2M2YyMTA2OGZjOGI3MWExOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2OWI2YWFkMWRlNzk5MWI3YTNiYjNhNjEwZjAxMDk5MWJlY2RmMDA2YWVlM2YxZGYxMDhmNWM5Yzk3MDYxM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/sprites/spriteData.ts#L1052-L1113",
+          "version": "repo-lines-v1:sha256:c7e091c9c7e187ea584f3c7a4de83d70211f8ec24701ca47f387ef144cddd175:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkN2IzNTYwOGU3ZmExZDBjZjE2ZTZjN2Q2YzE4NDNiYTk1NTA1NWI1ZjJmYjM2ZWFhN2EwYmQzNjY2ZjFlODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZGE4NWJhNzIyZGM3YzNlNWJmNzVkNjM4ODk1OTE3YWQ4Mzc0NDcwYjViYzQ0MTdjMTZjMDI5ZTFmYjZhMjkifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/office/wallTiles.ts#L24-L54",
+          "version": "repo-lines-v1:sha256:e04a0e0eac49539411d71e5af2e5310f17bcdd7a9fb591b4e671c56551a224b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOTFlZmE2MTgxZDQ4YmNlNTZjZTM4OGY3M2Y4NWQ4NTYwZmI5YjkzZmJlOGVmZDZiZDUzY2U1NTczYjI4N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxY2U0ZTU4YjYyN2NiYTUwMWIwNGY0YjJlOTg3Y2JiMTNlYzY5YjE4YzU4YmJlMmIwZDBlMjAyODk2MDc0NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhNzNkNDc1Yjg2OWU0MWRmZWQ4MGMyZDYxYTJlNTQ2MjcxZThlOGNlNjRiOWFiY2RlNzM1OTdkYmQyMDg0ODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d96639555c774212ae56e1b4fed70ea9",
+      "statement": "The server stores layout and agent-seat state in `~/.pixel-agents/layout.json` and `~/.pixel-agents/agent-seats.json`; persisted layout takes precedence over the default layout, and saving layouts writes state and broadcasts the update to other connected clients.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L169-L196",
+          "version": "repo-lines-v1:sha256:8960abaa207f9c3efe6928918664e00f17ffa3c6bdf7d305dc3ef3e4b5048d39:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMWZjZDdiM2Q1MGRhNzY4YjQ3ZDkzYTExZjQzZjEzZjcwMDYxZjVlYmY3Y2E2MzJhNTFkNjY2MzBhNjdhMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5Njg4OGM2NzNmMTUzOGIzNWZmOGQzOWFjMWQzOWRjODcyYWZlMzNlYmZiZTZjYmY5MzMzNDA4NjNlM2M1NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0Nzk1NDNmYWI2OTQwMzMzZmNjN2YyNjFlOTgzMzUyYWQ0YjYxYjlhMTZkMDg3OTUyMzI2YzU0ODYxZTFhYjIifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L43-L76",
+          "version": "repo-lines-v1:sha256:7f5eff686f62330e2eee12f8db5965696037afc6e741bd521d1d9969649ada02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYjBkYmFmODE4NTU0NzJjNGJhMThjYzk2YWEzNDc1OTg5ZDhlM2YzOTU4ZGVhNzc4NDdjNzg3ODc5NDVlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTNiMWIyMWUxYTdmOTE0OGE5MTIzNTY4NjhiOGRlYzY1NmUyMWQ5NmFhYThkMzhhMWZhOGEwNzViZWRiNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OGE1MzA2ODBmNDgwYzUwNzJjOGFlYjBiZGJhYzE1MjVhODAwZTc0YmUyODJhZDRkZDc4MTRjMDlmMjFlYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MTkwMzlmMjhiMmEyNDA2M2EyZTI1YzNkMTlhNWM2YzZmYzg5ZWM0OTdlNDI0ZTBhYmQ4Y2JjOGJjYmQ3YzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_777bf8057766486e9de76da24ba84064",
+      "statement": "Seat persistence is keyed by numeric server agent ID and carries palette, hue shift, and nullable seat ID; the UI saves only non-subagent characters, so the persisted identities are not Claude session IDs.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L141-L153",
+          "version": "repo-lines-v1:sha256:4098537761a6d057f23e6d020e13ba20ec4dea4bcea530762cae70126873f7c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNzk5OGI3OGQ4NzJhOTlkNTAxOTU1N2M5YTk0ZDRiZTRhMTZkMTFiZWE5NDZkYmVlYjYzNDA5ZGY1OTAxNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ZjhkOTQ5ODVjOTA5ODI3M2FjYTQ0Y2JkMmYxZWE2YWQwZTNiMWQ1ZjA4NTJhODMwNDhkOGRjMmQxNmNiNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNlN2NkMGMzYTYyMzA0NzY2ODE2MWQxMDRlOTlkODYyMDljYTNlNzc1NGEyNWIxMTlhNDkwNzg3ODA0MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlMThlNWJhNmY3YzcyNTQxNDJmYjkxZjU1MTRmZDU4ZTY1MjEzZjUwMzZjZWM0M2Q3Yzg5MWJiMGFmM2NkNTUifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L208-L233",
+          "version": "repo-lines-v1:sha256:412904935fd70012b954d6d74bfef86b0d4171e118754175eef3e9953bdfb3e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZWY2ZWI1OWY1MTVmOTBlYzQyNjI4OWIwZjZlNjhmMmJmOWU2MWQ1ZThlOTJlN2UxMjU1YmU2YzdkMzQzZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwODAyNGNkMTdmODg2NjVjZjg5MDRhZDg5YzU0NzhlYTJiMGVkMjIwNjI4OTVjMzhlMjI1ZDBjZWIzMTIyZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlMDYwZWQ2ZTMwZjAzNTZmMDIyOGMzMDhkMTdmZjVjMDQ5NGVjOWU3NDMxYmU1MzBhZTE2MGJkMWQ4YzQ4NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NDAyZDVlYjc2NGJiOGMzZTVlOWQyMTEwMmVjZGNjYzlkNGZhNmQ2OGFiN2RkNDlhNGY2M2MzNGJkYWMyZDMifQ"
+        },
+        {
+          "resource": "repo://webview-ui/src/hooks/useExtensionMessages.ts#L55-L62",
+          "version": "repo-lines-v1:sha256:ab1e3f42ef6288ea9f61f2082ac9e1f8d45741f8c07baae56da875895d370066:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRjNjAyNmFhMWUxMDdkZjAwMzZkNjY4YTFhODVmZDVjMGQzZGFhYmIwOTI4OGM5MzRlODQ3ZmVmYjIyNzA5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQxZmIxNzdmMWYyMjZhMWUzZjI1YzIyZDk3MzNmYjQ1NDg1NWVhNzAzZDI5NDVkZmZlYzMzZWRmMDA2ZTU2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmYxNzQzNTgwMmRhOGRmZDZjY2E3MzhiYzQ2ZGRmMTg2ZDJjMmY4ZjI1ZmZiMTk1NWQ2MmQ4ZjUwNzM3MjA4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de85f283186a470c904c0c8fcc2eb0be",
+      "statement": "The furniture extraction workflow reads a locally supplied 32×32 Office Tileset and writes individual furniture PNGs plus `furniture-catalog.json` under `webview-ui/public/assets/furniture`, whereas the separate import script copies a 16×16 sheet to `assets/office_tileset_16x16.png`.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/extract-furniture.ts#L210-L315",
+          "version": "repo-lines-v1:sha256:ed45377ccad693b86babf796c2c88ed55fe7a3ffe5afa86d720b4f346e002a99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0MDBkMzU0MWZkYTgyMTU0YTQ5NTk1NTdhZDliMjAxOTcyYjNlNTM3YTBjOTEyNDY2MmYyMzJiZDkzNWFmMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlYmE1OTYwNmUxYjZhMmFkYTlmYmM4ZGJmYzFiOGEwYmY4ZDI5YjlkYjgwOTFiNDUyMDUyYTM5YzE3ZjgyZWRlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5N2Q4NjMyZTU0ZTkyOThhYmI5NTg3MjdlMmQ1MTQwOGFiYWYxMzY2MDM1Mzc5MTAxNDBhYmY2NWIzMGFiNjEzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkYjk2ODUyNGRhMmFkMzliMjc4ZjZhOGM5N2Y2ZDkzMGQ3NGNiZGEyNjViOGU2NGFlNmZlZTA3YjI0YzlhOWJlIn0"
+        },
+        {
+          "resource": "repo://scripts/extract-furniture.ts#L28-L32",
+          "version": "repo-lines-v1:sha256:bb3154dc1f0fdb5f8808858119861965fdcc1c7e5e9b3e867ff89df7da6e4689:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ0ZGYxOTI1MTZiODEwN2FhZTYyNTZlY2E1Njk0ZGRjNWJjZTU4ZTdhMjI5MDk0ZjZjN2Q5ZmU1MDc5NmFjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQwM2NmMmNmZGE0M2EzOTZjMTY5MzI1MDBmZDc3NTg4MmMyYWI5NzFkOWMxZThhMjY3NjUwM2M4ZDIwMmNmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjFlODQzYzM4ODRlZjc0MWY0MDAzYzZlMTg4NGJmOWMxMTU4ODQyMTY3ZTM2OGJjNmU3MmJkOTM3YzM5MTFiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZThiODdhODdlOTFkMzFiNjQ1NDVkNjI5ZTdhZjM0NTI5OWNlODJhYzdjYWJiYjgwMWVlYjE5YzdmYTYxZGFjMiJ9"
+        },
+        {
+          "resource": "repo://scripts/extract-furniture.ts#L4-L13",
+          "version": "repo-lines-v1:sha256:9a70901a60aae0d8af17722701067b665b02d3dd7861a01b4693634d647f89a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MTRjYzNjYjZkN2UwZjM0ZjQzOTIzNjk0Y2NjYTlmYTM4MjIzMmNjZTcxYWYzZjRhNmY3N2Q4ZGY2MzcxNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlYTg5ODNhZTZiZGJlN2VkY2RjNzBkZGNjYjBkM2FlMzkzMTc1OWUzODRlYjQ2NmMyNzE4NmI2M2Y1NWMwMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MzJhYzRjYWUyNDUwYWQwOTY1ZjQ2OTRjMTYzMGUxYzM1Y2I5ZTY3NjVkOGM0OTgzOGI5NzIwY2U5NjU4ZWEifQ"
+        },
+        {
+          "resource": "repo://scripts/import-tileset.ts#L5-L13",
+          "version": "repo-lines-v1:sha256:c886a54fa517e11b5a7e13c1d2c237f3f0be715920cfba193531dedf67e96e56:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc5OWRkZDRjYzdkMWI5OTY5ODc1OGEyZDRjNDAzOWExMjI4NDdjZGVhODdlZDI1YTM3NTQzOTdmYzg4ZjJmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdhM2MyNGEzOGQwMGU1YWZkZmY0NWQ2YzZlYWIzYTY4NmRmNWJmNjNlMDgzNGQ2NTg2NzQ5Nzc4OTI4YmRjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzc1NDMyNTY3ODE2NDQwOTUxN2Q2MjU1NjE2YWVhNDBmNmFjNjcxOWM2NzJiZTUyMmUxZDBlODFmNDk5ODNjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_47584e4d040841058fdc057432eb47ed",
+      "statement": "The server stops the watcher and exits after ten minutes without agents, clients, or newer activity, and it applies the same watcher/server cleanup on `SIGINT`; a heartbeat removes dead WebSocket clients for the shutdown guard.",
+      "evidence": [
+        {
+          "resource": "repo://server/index.ts#L260-L275",
+          "version": "repo-lines-v1:sha256:eb94ce80345a92926ab7fa323bae7dee56f0927fa980d87bee85527be5effeb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNGY2YjY2MjU0MGZhNjMyYjFlZmU1Y2E4YmM4NmE3Zjg4ZmIyM2VkNDhjYjZlMjAwOWZkZjJjNjQ5NmMyY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4YmU3ZWY4YThjYzBmMWY5M2UwNzQxNWNhOTY2Mzg4OWQzYjc3NTcwZDBlMzliZDEzNWM2NjczZDc0YWNkZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://server/index.ts#L88-L100",
+          "version": "repo-lines-v1:sha256:4330aefaf4d123c0f68968531cafc3bc165e290acb330e94276a1bb39dcc7b5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NzFmY2U1MWZkYmIwYmI5M2U2ZWYyZTQwN2RjM2UwZjRiYzdjZmM3NjEyNjI4MzU1YTE4NzhmOTIwZjY1MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYzgwZDVjZWI1YjQzYWZiZDNmNWJiYTc1Mzg4NGUwNzU0ZTdiMTgwZGVjN2Q0MjFjODhhZDUwYzA0YzdiYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmOTdjNjdkYjNiNTllMmFkYzFhNGZjM2Q4OTU0MWExNjRkMjZiNThjNTg0NTQ1MTcxMDhiYmZkMDE2NzE0YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlZmE1N2IzMmM5NmIzMzBlYjg1Y2IwMzE5Y2QyMDUzNjcxNjIzOTRmNjhlMTE2YTY3OTQwMjlmMzA4M2JkMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4d7870b4b65433fa5fde2230ddc4b67",
+      "statement": "The repository has build and UI lint scripts but no root `test` script, making build/lint and targeted runtime checks the available scripted validation path.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L6-L15",
+          "version": "repo-lines-v1:sha256:30676754e4f199d0a891db7e22ce68fad1d85f195712dcaf9b7e28d85b640615:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNzQyMjBiZjJiMmFhYjhhNzZlYTIxZjNiZDYwMGM3NzIwODVhZjU4ZDdjNDkwMzNiYjM2YjUzM2Y3ZWZkMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNGY2YTQ2MmQxMmUxMTM3NTBiNjU0M2M0M2M0MzA0ODYyMjkxMTViMjVhNWU3YTNhNWMxZDU3MmE1NWY5MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5Y2QxNmM1ZmQ2NDQzOWIyMzNlMTc1MjEzMmU5ZWQ2ZmVlZmY2YjhhNmE5MzIwZTE3MDRlNjQ3ODQ3YjYwNjUifQ"
+        },
+        {
+          "resource": "repo://webview-ui/package.json#L6-L10",
+          "version": "repo-lines-v1:sha256:5bae1a5d8811ceb540e4ba917c541dd186c007a652ba4fe9f3f8a6dc562cdf79:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FkYjc5Zjk3ZTU2Y2M3MTA4MDg2ZWYwY2Y1Y2MzOTNmNWRkNzBmYWI4Njg5ODE5ZDc1ZDNlMjE4ZWI1ODhmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E2M2JmMDk0ZjUzYTg5MTIzMjc5MjRlMjllMTE5MzIzYjJjOTU5YWNjMDEzMmZhZmEyNzE1MmI1YmQ5Zjg2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzkyYzkyYjQ2MWYxNjdhY2NiM2RlOTkzZjMwOGY0MDM5MjczZDRlMjQzYmRhY2JkNWZlNDMwYzg1ZGZmMDBjYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T16:48:54.278Z"
+  }
+}

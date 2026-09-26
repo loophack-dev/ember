@@ -336,6 +336,15 @@ export class OfficeState {
     }
   }
 
+  /** Unassign the agent's current seat without moving them. */
+  releaseSeat(agentId: number): void {
+    const ch = this.characters.get(agentId)
+    if (!ch?.seatId) return
+    const old = this.seats.get(ch.seatId)
+    if (old) old.assigned = false
+    ch.seatId = null
+  }
+
   /** Walk an agent to an arbitrary walkable tile (right-click command) */
   walkToTile(agentId: number, col: number, row: number): boolean {
     const ch = this.characters.get(agentId)
@@ -574,6 +583,11 @@ export class OfficeState {
     if (ch) {
       ch.currentTool = tool
     }
+  }
+
+  setAgentFolderName(id: number, name: string): void {
+    const ch = this.characters.get(id)
+    if (ch) ch.folderName = name
   }
 
   showPermissionBubble(id: number): void {

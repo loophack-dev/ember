@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/runtime-and-protocol.md": {
+      "pageVersion": "sha256:effb98b58f7927b55f99f8f1f0da05b72e38e0843d2631ba57efaf814b42e00f",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/concepts/office-layout-and-simulation.md": {
+      "pageVersion": "sha256:44a13aea6287a16ac6e28e4dae400581d27e3c0d327a82e21bafb83a149d2340",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/integrations/claude-code-sessions-and-autolaunch.md": {
+      "pageVersion": "sha256:415e9928fcc0a29ece46383535d190884f06df7410aa4ba2d7cb76ae857c95fc",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/operations/development-build-and-assets.md": {
+      "pageVersion": "sha256:3ee6ce30be3cf4cb8f289dcbdd061b19ffd69c2443c6b4fc33728c0e368de05d",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:7d8afcbcd5469fb701caca2e47abc08c840ef5ab04c50c373af6385792949ac4",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/testing/validation-and-change-safety.md": {
+      "pageVersion": "sha256:4bc9c52da6f4f2c38f5abfdbf5a716fd337e4bbef431a2b80037c11f3556ab86",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    },
+    "/openwiki/workflows/transcript-to-agent-visualization.md": {
+      "pageVersion": "sha256:cbbca35b06cb956e66a6d4e85298be24fccbe782290f8d765953817433de3130",
+      "completedBy": "openwiki/0.6.0",
+      "completedRunId": "da90071b-17c9-49fb-af02-21b5f1963251",
+      "gitHead": "a8c73c091fa67b908594295af39c038db3ba92f0",
+      "sourceFingerprint": "sha256:ebc1ebd5a37b8bb8900cde4f1acede3f8b3f39f480c126ae16ed31dccd184f73"
+    }
+  }
+}

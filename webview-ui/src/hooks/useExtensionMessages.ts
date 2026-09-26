@@ -52,13 +52,18 @@ export interface ExtensionMessageState {
   workspaceFolders: WorkspaceFolder[]
 }
 
-function saveAgentSeats(os: OfficeState): void {
-  const seats: Record<number, { palette: number; hueShift: number; seatId: string | null }> = {}
-  for (const ch of os.characters.values()) {
-    if (ch.isSubagent) continue
-    seats[ch.id] = { palette: ch.palette, hueShift: ch.hueShift, seatId: ch.seatId }
+function addProjectedAgent(
+  os: OfficeState,
+  pending: Array<{ id: number; palette?: number; hueShift?: number; seatId?: string; folderName?: string }>,
+  layoutReady: boolean,
+  agent: { id: number; palette?: number; hueShift?: number; seatId?: string; folderName?: string },
+  skipSpawnEffect: boolean,
+): void {
+  if (layoutReady) {
+    os.addAgent(agent.id, agent.palette, agent.hueShift, agent.seatId, skipSpawnEffect, agent.folderName)
+    return
   }
-  vscode.postMessage({ type: 'saveAgentSeats', seats })
+  pending.push(agent)
 }
 
 export function useExtensionMessages(
@@ -109,16 +114,15 @@ export function useExtensionMessages(
         pendingAgents = []
         layoutReadyRef.current = true
         setLayoutReady(true)
-        if (os.characters.size > 0) {
-          saveAgentSeats(os)
-        }
       } else if (msg.type === 'agentCreated') {
         const id = msg.id as number
         const folderName = msg.folderName as string | undefined
+        const palette = msg.palette as number | undefined
+        const hueShift = msg.hueShift as number | undefined
+        const seatId = msg.seatId as string | undefined
         setAgents((prev) => (prev.includes(id) ? prev : [...prev, id]))
         setSelectedAgent(id)
-        os.addAgent(id, undefined, undefined, undefined, undefined, folderName)
-        saveAgentSeats(os)
+        os.addAgent(id, palette, hueShift, seatId, undefined, folderName)
       } else if (msg.type === 'agentClosed') {
         const id = msg.id as number
         setAgents((prev) => prev.filter((a) => a !== id))
@@ -149,10 +153,15 @@ export function useExtensionMessages(
         const incoming = msg.agents as number[]
         const meta = (msg.agentMeta || {}) as Record<number, { palette?: number; hueShift?: number; seatId?: string }>
         const folderNames = (msg.folderNames || {}) as Record<number, string>
-        // Buffer agents — they'll be added in layoutLoaded after seats are built
         for (const id of incoming) {
           const m = meta[id]
-          pendingAgents.push({ id, palette: m?.palette, hueShift: m?.hueShift, seatId: m?.seatId, folderName: folderNames[id] })
+          addProjectedAgent(os, pendingAgents, layoutReadyRef.current, {
+            id,
+            palette: m?.palette,
+            hueShift: m?.hueShift,
+            seatId: m?.seatId,
+            folderName: folderNames[id],
+          }, true)
         }
         setAgents((prev) => {
           const ids = new Set(prev)
