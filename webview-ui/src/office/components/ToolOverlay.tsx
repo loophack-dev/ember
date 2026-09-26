@@ -125,7 +125,7 @@ export function ToolOverlay({
                   }}
                 >
                   {([
-                    ['Edit', () => onEditAgent(id)],
+                    ['Config', () => onEditAgent(id)],
                     ['Move', () => onMoveAgent(id)],
                     ['Fire', () => onFireAgent(id)],
                   ] as const).map(([label, handler]) => (

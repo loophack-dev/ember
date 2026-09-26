@@ -41,8 +41,10 @@ export function mergeAppearanceForMove(
   }
 }
 
-export function generateAppearance(officeState: OfficeState): Appearance {
-  const { palette, hueShift } = pickDiversePalette(officeState)
+export function generateAppearance(officeState: OfficeState, paletteOverride?: number): Appearance {
+  const picked = pickDiversePalette(officeState)
+  const palette = paletteOverride ?? picked.palette
+  const hueShift = paletteOverride !== undefined ? 0 : picked.hueShift
   const color = CHARACTER_PALETTES[palette]?.shirt ?? '#4488CC'
   const seatId = findFreeSeatId(officeState)
 

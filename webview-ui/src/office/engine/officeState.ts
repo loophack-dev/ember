@@ -643,6 +643,13 @@ export class OfficeState {
     if (ch) ch.folderName = name
   }
 
+  setAgentLook(id: number, palette: number, hueShift = 0): void {
+    const ch = this.characters.get(id)
+    if (!ch) return
+    ch.palette = palette
+    ch.hueShift = hueShift
+  }
+
   showPermissionBubble(id: number): void {
     const ch = this.characters.get(id)
     if (ch) {

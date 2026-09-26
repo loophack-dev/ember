@@ -171,7 +171,7 @@ export function EmbersSidebar({
                           onEdit(id)
                         }}
                       >
-                        Edit
+                        Config
                       </button>
                       <button
                         type="button"

@@ -68,3 +68,37 @@ html, body, #root {
 * {
   font-family: 'FS Pixel Sans', sans-serif;
 }
+
+select.ember-field {
+  color-scheme: dark;
+  background-color: #2a2a3e;
+  color: var(--pixel-text);
+}
+
+select.ember-field option,
+select.ember-field optgroup {
+  background-color: #2a2a3e;
+  color: #e8e8f0;
+}
+
+.ember-md-preview h1,
+.ember-md-preview h2,
+.ember-md-preview h3 {
+  margin: 0 0 8px;
+  color: var(--pixel-text);
+}
+
+.ember-md-preview p,
+.ember-md-preview ul {
+  margin: 0 0 8px;
+}
+
+.ember-md-preview code,
+.ember-md-preview pre {
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--pixel-text);
+}
+
+.ember-md-preview a {
+  color: var(--pixel-accent);
+}
