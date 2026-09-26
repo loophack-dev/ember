@@ -1,4 +1,5 @@
-import { embersRequest } from './http.js'
+import { getEmbersConfig } from './config.js'
+import { EmbersApiError, embersRequest } from './http.js'
 import type { AgentCreate, AgentOut, AgentUpdate, Appearance, ListEnvelope, ProviderOut, ToolOut } from './types.js'
 
 export function listAgents(): Promise<AgentOut[]> {
@@ -31,4 +32,22 @@ export function listProviders(): Promise<ProviderOut[]> {
 
 export function listTools(): Promise<ToolOut[]> {
   return embersRequest<ListEnvelope<ToolOut>>('GET', '/tools').then((body) => body.items)
+}
+
+export async function refreshArtifactDownload(id: string): Promise<string> {
+  const { baseUrl, token } = getEmbersConfig()
+  const headers: Record<string, string> = {
+    'ngrok-skip-browser-warning': '1',
+  }
+  if (token) headers.Authorization = token
+  let response: Response
+  try {
+    response = await fetch(`${baseUrl}/artifacts/${id}/download`, { method: 'GET', headers, redirect: 'follow' })
+  } catch {
+    throw new EmbersApiError('internal_error', 'Could not refresh the artifact download link')
+  }
+  if (!response.ok) {
+    throw new EmbersApiError('internal_error', `Artifact download failed (${response.status})`, null, response.status)
+  }
+  return response.url || `${baseUrl}/artifacts/${id}/download`
 }

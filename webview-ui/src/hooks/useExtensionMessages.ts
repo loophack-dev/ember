@@ -9,6 +9,8 @@ import { setWallSprites } from '../office/wallTiles.js'
 import { setCharacterTemplates } from '../office/sprites/spriteData.js'
 import { vscode } from '../vscodeApi.js'
 import { playDoneSound, setSoundEnabled } from '../notificationSound.js'
+import { getBackendId } from '../embers/officeBridge.js'
+import { applyCharacterPose } from '../embers/characterStatus.js'
 
 export interface SubagentCharacter {
   id: number
@@ -61,6 +63,7 @@ function addProjectedAgent(
 ): void {
   if (layoutReady) {
     os.addAgent(agent.id, agent.palette, agent.hueShift, agent.seatId, skipSpawnEffect, agent.folderName)
+    applyCharacterPose(os, agent.id, getBackendId(agent.id))
     return
   }
   pending.push(agent)
@@ -110,6 +113,7 @@ export function useExtensionMessages(
         // Add buffered agents now that layout (and seats) are correct
         for (const p of pendingAgents) {
           os.addAgent(p.id, p.palette, p.hueShift, p.seatId, true, p.folderName)
+          applyCharacterPose(os, p.id, getBackendId(p.id))
         }
         pendingAgents = []
         layoutReadyRef.current = true
@@ -123,6 +127,7 @@ export function useExtensionMessages(
         setAgents((prev) => (prev.includes(id) ? prev : [...prev, id]))
         setSelectedAgent(id)
         os.addAgent(id, palette, hueShift, seatId, undefined, folderName)
+        applyCharacterPose(os, id, getBackendId(id))
       } else if (msg.type === 'agentClosed') {
         const id = msg.id as number
         setAgents((prev) => prev.filter((a) => a !== id))

@@ -1,4 +1,5 @@
 import type { AgentOut, Appearance } from './types.js'
+import { hydrateCharacterStatuses, parseCharacterStatus, setCharacterStatus } from './characterStatus.js'
 
 const uuidToDisplay = new Map<string, number>()
 const displayToUuid = new Map<number, string>()
@@ -52,6 +53,7 @@ export function hydrateAgents(agents: AgentOut[]): void {
   const folderNames: Record<number, string> = {}
   const agentMeta: Record<number, { palette?: number; hueShift?: number; seatId?: string }> = {}
 
+  hydrateCharacterStatuses(agents)
   for (const agent of agents) {
     cacheAgent(agent)
     const id = ensureDisplayId(agent.id)
@@ -65,6 +67,7 @@ export function hydrateAgents(agents: AgentOut[]): void {
 
 export function projectCreated(agent: AgentOut): void {
   cacheAgent(agent)
+  setCharacterStatus(agent.id, parseCharacterStatus(agent.character_status))
   const id = ensureDisplayId(agent.id)
   const meta = appearanceToMeta(agent.appearance)
   dispatch({

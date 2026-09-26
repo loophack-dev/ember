@@ -1,6 +1,6 @@
 export type Provider = 'anthropic' | 'openai' | 'gemini' | 'bedrock'
 export type AgentRecordStatus = 'active' | 'archived'
-export type CharacterStatus = 'idle' | 'thinking' | 'working' | 'writing' | 'done' | 'error'
+export type CharacterStatus = 'idle' | 'working' | 'waiting'
 export type ArtifactType = 'docx' | 'pptx' | 'md'
 
 export interface ModelParams {

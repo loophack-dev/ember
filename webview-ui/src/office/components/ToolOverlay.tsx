@@ -5,6 +5,8 @@ import type { SubagentCharacter } from '../../hooks/useExtensionMessages.js'
 import { TILE_SIZE, CharacterState } from '../types.js'
 import { TOOL_OVERLAY_VERTICAL_OFFSET, CHARACTER_SITTING_OFFSET_PX } from '../../constants.js'
 import { statusDot } from '../statusDot.js'
+import { getBackendId } from '../../embers/officeBridge.js'
+import { isEmberIdle } from '../../embers/characterStatus.js'
 
 interface ToolOverlayProps {
   officeState: OfficeState
@@ -24,7 +26,7 @@ interface ToolOverlayProps {
 export function ToolOverlay({
   officeState,
   agents,
-  agentTools,
+  agentTools: _agentTools,
   subagentCharacters,
   containerRef,
   zoom,
@@ -75,7 +77,8 @@ export function ToolOverlay({
         const screenY = (deviceOffsetY + (ch.y + sittingOffset - TOOL_OVERLAY_VERTICAL_OFFSET) * zoom) / dpr
         const displayName = ch.folderName
           || (isSub ? (subagentCharacters.find((s) => s.id === id)?.label ?? 'Subtask') : `Ember #${id}`)
-        const { color: dotColor, pulse } = statusDot(id, officeState, agentTools)
+        const { color: dotColor, pulse } = statusDot(id)
+        const actionsEnabled = isEmberIdle(getBackendId(id))
 
         return (
           <div
@@ -129,8 +132,10 @@ export function ToolOverlay({
                     <button
                       key={label}
                       type="button"
+                      disabled={!actionsEnabled}
                       onClick={(e) => {
                         e.stopPropagation()
+                        if (!actionsEnabled) return
                         handler()
                       }}
                       style={{
@@ -140,7 +145,8 @@ export function ToolOverlay({
                         color: label === 'Fire' ? 'var(--pixel-close-text)' : 'var(--pixel-text)',
                         border: '2px solid transparent',
                         borderRadius: 0,
-                        cursor: 'pointer',
+                        cursor: actionsEnabled ? 'pointer' : 'default',
+                        opacity: actionsEnabled ? 1 : 0.4,
                       }}
                     >
                       {label}

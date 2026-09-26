@@ -1,21 +1,10 @@
-import type { ToolActivity } from './types.js'
-import type { OfficeState } from './engine/officeState.js'
+import { getBackendId } from '../embers/officeBridge.js'
+import { getCharacterStatus } from '../embers/characterStatus.js'
 
-export function statusDot(
-  id: number,
-  officeState: OfficeState,
-  agentTools: Record<number, ToolActivity[]>,
-): { color: string; pulse: boolean } {
-  const ch = officeState.characters.get(id)
-  if (!ch) return { color: 'var(--pixel-text-dim)', pulse: false }
-
-  const tools = agentTools[id]
-  const hasPermission = (ch.isSubagent && ch.bubbleType === 'permission')
-    || tools?.some((t) => t.permissionWait && !t.done)
-  if (hasPermission) return { color: 'var(--pixel-status-permission)', pulse: false }
-
-  const hasActiveTools = tools?.some((t) => !t.done)
-  if (ch.isActive && hasActiveTools) return { color: 'var(--pixel-status-active)', pulse: true }
-
+export function statusDot(id: number): { color: string; pulse: boolean } {
+  const uuid = getBackendId(id)
+  const status = uuid ? getCharacterStatus(uuid) : 'idle'
+  if (status === 'working') return { color: 'var(--pixel-status-permission)', pulse: true }
+  if (status === 'waiting') return { color: 'var(--pixel-status-active)', pulse: false }
   return { color: 'var(--pixel-text-dim)', pulse: false }
 }

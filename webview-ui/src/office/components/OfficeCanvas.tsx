@@ -10,6 +10,8 @@ import { getCatalogEntry, isRotatable } from '../layout/furnitureCatalog.js'
 import { canPlaceFurniture, getWallPlacementRow } from '../editor/editorActions.js'
 import { vscode } from '../../vscodeApi.js'
 import { unlockAudio } from '../../notificationSound.js'
+import { getBackendId } from '../../embers/officeBridge.js'
+import { isEmberIdle } from '../../embers/characterStatus.js'
 
 interface OfficeCanvasProps {
   officeState: OfficeState
@@ -576,6 +578,7 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
       }
 
       if (relocatingAgentId !== null && onRelocatePlace) {
+        if (!isEmberIdle(getBackendId(relocatingAgentId))) return
         const tile = screenToTile(e.clientX, e.clientY)
         if (tile) onRelocatePlace(relocatingAgentId, tile.col, tile.row)
         return
@@ -585,7 +588,7 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
       if (officeState.selectedAgentId !== null) {
         const selectedCh = officeState.characters.get(officeState.selectedAgentId)
         // Skip seat reassignment for sub-agents
-        if (selectedCh && !selectedCh.isSubagent) {
+        if (selectedCh && !selectedCh.isSubagent && isEmberIdle(getBackendId(officeState.selectedAgentId))) {
           const tile = screenToTile(e.clientX, e.clientY)
           if (tile) {
             const seatId = officeState.getSeatAtTile(tile.col, tile.row)
@@ -640,7 +643,7 @@ export function OfficeCanvas({ officeState, onClick, isEditMode, editorState, on
     e.preventDefault()
     if (isEditMode) return
     // Right-click to walk selected agent to tile
-    if (officeState.selectedAgentId !== null) {
+    if (officeState.selectedAgentId !== null && isEmberIdle(getBackendId(officeState.selectedAgentId))) {
       const tile = screenToTile(e.clientX, e.clientY)
       if (tile) {
         officeState.walkToTile(officeState.selectedAgentId, tile.col, tile.row)

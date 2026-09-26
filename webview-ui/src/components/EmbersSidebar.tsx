@@ -3,7 +3,10 @@ import type { ToolActivity } from '../office/types.js'
 import type { OfficeState } from '../office/engine/officeState.js'
 import { statusDot } from '../office/statusDot.js'
 import { getBackendId, getCachedAgent } from '../embers/officeBridge.js'
+import { isEmberIdle } from '../embers/characterStatus.js'
 import { EmberPortrait } from './EmberPortrait.js'
+import { TasksPane } from './TasksPane.js'
+import { useEmbersTasks } from '../hooks/useEmbersTasks.js'
 
 interface EmbersSidebarProps {
   officeState: OfficeState
@@ -27,13 +30,13 @@ const rowBtn: React.CSSProperties = {
 export function EmbersSidebar({
   officeState,
   agents,
-  agentTools,
+  agentTools: _agentTools,
   onSelect,
   onEdit,
   onFire,
 }: EmbersSidebarProps) {
   const [, setTick] = useState(0)
-  const [draft, setDraft] = useState('')
+  const tasks = useEmbersTasks(officeState)
 
   useEffect(() => {
     let rafId = 0
@@ -50,6 +53,10 @@ export function EmbersSidebar({
     return !!ch && !ch.isSubagent
   })
   const selectedId = officeState.selectedAgentId
+  const selectedCh = selectedId !== null ? officeState.characters.get(selectedId) : undefined
+  const selectedBackendId = selectedId !== null ? getBackendId(selectedId) : null
+  const paneEnabled = selectedId !== null && !!selectedCh && !selectedCh.isSubagent && !!selectedBackendId
+  const pendingAsk = selectedBackendId ? tasks.pendingAsks[selectedBackendId] ?? null : null
 
   return (
     <aside
@@ -94,8 +101,9 @@ export function EmbersSidebar({
               const cached = getCachedAgent(getBackendId(id) ?? '')
               const name = ch?.folderName || cached?.name || `Ember #${id}`
               const role = cached?.identity.role ?? ''
-              const { color: dotColor, pulse } = statusDot(id, officeState, agentTools)
+              const { color: dotColor, pulse } = statusDot(id)
               const isSelected = selectedId === id
+              const actionsEnabled = isEmberIdle(getBackendId(id))
               return (
                 <div
                   key={id}
@@ -155,9 +163,11 @@ export function EmbersSidebar({
                     <div style={{ display: 'flex', gap: 2, marginTop: 4 }}>
                       <button
                         type="button"
-                        style={rowBtn}
+                        disabled={!actionsEnabled}
+                        style={{ ...rowBtn, opacity: actionsEnabled ? 1 : 0.4, cursor: actionsEnabled ? 'pointer' : 'default' }}
                         onClick={(e) => {
                           e.stopPropagation()
+                          if (!actionsEnabled) return
                           onEdit(id)
                         }}
                       >
@@ -165,9 +175,16 @@ export function EmbersSidebar({
                       </button>
                       <button
                         type="button"
-                        style={{ ...rowBtn, color: 'var(--pixel-close-text)' }}
+                        disabled={!actionsEnabled}
+                        style={{
+                          ...rowBtn,
+                          color: 'var(--pixel-close-text)',
+                          opacity: actionsEnabled ? 1 : 0.4,
+                          cursor: actionsEnabled ? 'pointer' : 'default',
+                        }}
                         onClick={(e) => {
                           e.stopPropagation()
+                          if (!actionsEnabled) return
                           onFire(id)
                         }}
                       >
@@ -181,44 +198,22 @@ export function EmbersSidebar({
           )}
         </div>
       </section>
-      <section
-        style={{
-          flex: 1,
-          minHeight: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          padding: 8,
+      <TasksPane
+        officeState={officeState}
+        selectedId={selectedId}
+        enabled={paneEnabled}
+        socketStatus={tasks.socketStatus}
+        log={tasks.log}
+        pendingAsk={pendingAsk}
+        onDelegate={(instruction) => {
+          if (!paneEnabled || !selectedBackendId) return false
+          return tasks.sendDelegate(selectedBackendId, instruction)
         }}
-      >
-        <div style={{ fontSize: '16px', color: 'var(--pixel-text)', marginBottom: 6 }}>
-          Instructions
-        </div>
-        <form
-          style={{ flex: 1, minHeight: 0, display: 'flex' }}
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <textarea
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) e.preventDefault()
-            }}
-            placeholder="Assign instructions to an Ember…"
-            style={{
-              flex: 1,
-              minHeight: 0,
-              resize: 'none',
-              background: 'var(--pixel-btn-bg)',
-              color: 'var(--pixel-text)',
-              border: '2px solid var(--pixel-border)',
-              borderRadius: 0,
-              padding: 8,
-              fontSize: '14px',
-              outline: 'none',
-            }}
-          />
-        </form>
-      </section>
+        onAnswer={(answer) => {
+          if (!paneEnabled || !pendingAsk) return false
+          return tasks.sendAnswer(pendingAsk, answer)
+        }}
+      />
     </aside>
   )
 }

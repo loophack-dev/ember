@@ -15,6 +15,7 @@ import { deleteAgent, putAppearance } from './embers/client.js'
 import { mergeAppearanceForMove } from './embers/appearance.js'
 import { embersErrorMessage } from './embers/http.js'
 import { cacheAgent, getBackendId, getCachedAgent, projectClosed } from './embers/officeBridge.js'
+import { isEmberIdle } from './embers/characterStatus.js'
 import { PULSE_ANIMATION_DURATION_SEC } from './constants.js'
 import { useEditorActions } from './hooks/useEditorActions.js'
 import { useEditorKeyboard } from './hooks/useEditorKeyboard.js'
@@ -190,6 +191,7 @@ function App() {
   const requestFire = useCallback((id: number) => {
     const os = getOfficeState()
     if (os.characters.get(id)?.isSubagent) return
+    if (!isEmberIdle(getBackendId(id))) return
     setRelocating(null)
     setFireTargetId(id)
   }, [setRelocating])
@@ -214,6 +216,7 @@ function App() {
   }, [fireTargetId, setCatalogError])
 
   const handleEditAgent = useCallback((id: number) => {
+    if (!isEmberIdle(getBackendId(id))) return
     setRelocating(null)
     setFireTargetId(null)
     setFormMode({ kind: 'edit', displayId: id })
@@ -222,6 +225,7 @@ function App() {
   const handleMoveAgent = useCallback((id: number) => {
     const os = getOfficeState()
     if (os.characters.get(id)?.isSubagent) return
+    if (!isEmberIdle(getBackendId(id))) return
     os.selectedAgentId = id
     setFireTargetId(null)
     setRelocating(id)
@@ -253,6 +257,10 @@ function App() {
 
   const handleRelocatePlace = useCallback((agentId: number, col: number, row: number) => {
     if (relocatingRef.current !== agentId) return
+    if (!isEmberIdle(getBackendId(agentId))) {
+      setRelocating(null)
+      return
+    }
     const os = getOfficeState()
     const ch = os.characters.get(agentId)
     if (!ch || ch.isSubagent) return

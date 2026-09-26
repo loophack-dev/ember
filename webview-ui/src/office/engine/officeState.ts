@@ -166,6 +166,59 @@ export class OfficeState {
     return null
   }
 
+  private findNearestFreeSeat(agentId: number): string | null {
+    const ch = this.characters.get(agentId)
+    if (!ch) return null
+    let best: string | null = null
+    let bestDist = Infinity
+    for (const [uid, seat] of this.seats) {
+      if (seat.assigned) continue
+      const dist = Math.abs(seat.seatCol - ch.tileCol) + Math.abs(seat.seatRow - ch.tileRow)
+      if (dist < bestDist) {
+        best = uid
+        bestDist = dist
+      }
+    }
+    return best
+  }
+
+  sitForTask(agentId: number): void {
+    const ch = this.characters.get(agentId)
+    if (!ch || ch.isSubagent) return
+    ch.isActive = true
+    if (!ch.seatId) {
+      const nearest = this.findNearestFreeSeat(agentId)
+      if (nearest) {
+        this.reassignSeat(agentId, nearest)
+        this.rebuildFurnitureInstances()
+        return
+      }
+      ch.state = CharacterState.TYPE
+      ch.path = []
+      ch.moveProgress = 0
+      ch.frame = 0
+      ch.frameTimer = 0
+      this.rebuildFurnitureInstances()
+      return
+    }
+    this.sendToSeat(agentId)
+    this.rebuildFurnitureInstances()
+  }
+
+  standIdle(agentId: number): void {
+    const ch = this.characters.get(agentId)
+    if (!ch || ch.isSubagent) return
+    ch.isActive = false
+    ch.seatTimer = 0
+    ch.path = []
+    ch.moveProgress = 0
+    ch.state = CharacterState.IDLE
+    ch.frame = 0
+    ch.frameTimer = 0
+    this.clearTaskWaiting(agentId)
+    this.rebuildFurnitureInstances()
+  }
+
   /**
    * Pick a diverse palette for a new agent based on currently active agents.
    * First 6 agents each get a unique skin (random order). Beyond 6, skins
@@ -611,6 +664,23 @@ export class OfficeState {
     if (ch) {
       ch.bubbleType = 'waiting'
       ch.bubbleTimer = WAITING_BUBBLE_DURATION_SEC
+    }
+  }
+
+  setTaskWaiting(id: number): void {
+    const ch = this.characters.get(id)
+    if (!ch) return
+    ch.bubbleType = 'waiting'
+    ch.bubbleTimer = 1e9
+    this.rebuildFurnitureInstances()
+  }
+
+  clearTaskWaiting(id: number): void {
+    const ch = this.characters.get(id)
+    if (!ch) return
+    if (ch.bubbleType === 'waiting') {
+      ch.bubbleType = null
+      ch.bubbleTimer = 0
     }
   }
 
