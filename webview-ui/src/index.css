@@ -11,6 +11,10 @@
   --pixel-border: #4a4a6a;
   --pixel-border-light: #6a6a8a;
   --pixel-accent: #5a8cff;
+  --pixel-brand: #f54e00;
+  --pixel-brand-bg: rgba(245, 78, 0, 0.22);
+  --pixel-brand-hover-bg: rgba(245, 78, 0, 0.38);
+  --pixel-brand-text: #ffd8c4;
   --pixel-green: #5ac88c;
   --pixel-shadow: 2px 2px 0px #0a0a14;
 

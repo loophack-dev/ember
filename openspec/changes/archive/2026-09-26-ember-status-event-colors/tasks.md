@@ -10,6 +10,6 @@
 
 ## 3. Check (user runs the app)
 
-- [ ] 3.1 Sending work turns the dots yellow before `ack`
-- [ ] 3.2 An `ask` turns them blue; answering turns them yellow
-- [ ] 3.3 A rejected first `delegate` returns the dots to gray
+- [x] 3.1 Sending work turns the dots yellow before `ack`
+- [x] 3.2 An `ask` turns them blue; answering turns them yellow
+- [x] 3.3 A rejected first `delegate` returns the dots to gray

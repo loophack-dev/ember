@@ -18,9 +18,10 @@ import { ThemeSelect } from './ThemeSelect.js'
 
 export type AgentFormMode = { kind: 'create' } | { kind: 'edit'; displayId: number }
 
-type FormTab = 'tools' | 'contract' | 'guardrails' | 'memory' | 'artefacts' | 'a2a'
+type FormTab = 'main' | 'tools' | 'contract' | 'guardrails' | 'memory' | 'artefacts' | 'a2a'
 
 const TABS: { id: FormTab; label: string }[] = [
+  { id: 'main', label: 'Main' },
   { id: 'tools', label: 'Tools & MCPs' },
   { id: 'contract', label: 'Contract' },
   { id: 'guardrails', label: 'Guardrails' },
@@ -110,7 +111,7 @@ export function AgentFormModal({ mode, officeState, onClose }: AgentFormModalPro
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [catalogLoading, setCatalogLoading] = useState(false)
-  const [tab, setTab] = useState<FormTab>('contract')
+  const [tab, setTab] = useState<FormTab>('main')
   const [previewInstructions, setPreviewInstructions] = useState(true)
   const [existingIdentity, setExistingIdentity] = useState<AgentIdentity | null>(null)
   const [existingAppearance, setExistingAppearance] = useState<Appearance | null>(null)
@@ -119,7 +120,7 @@ export function AgentFormModal({ mode, officeState, onClose }: AgentFormModalPro
     if (!mode) return
     let cancelled = false
     setError(null)
-    setTab('contract')
+    setTab('main')
     setPreviewInstructions(true)
     setExistingIdentity(null)
     setExistingAppearance(null)
@@ -339,7 +340,7 @@ export function AgentFormModal({ mode, officeState, onClose }: AgentFormModalPro
 
         {catalogLoading ? (
           <div style={{ padding: 12, color: 'var(--pixel-text-dim)', fontSize: '18px' }}>Loading…</div>
-        ) : tab !== 'contract' ? (
+        ) : tab !== 'main' ? (
           <div style={{ padding: 32, textAlign: 'center', color: 'var(--pixel-text-dim)', fontSize: '18px' }}>
             Comming soon
           </div>

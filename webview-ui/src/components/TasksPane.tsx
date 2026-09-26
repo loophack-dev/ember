@@ -76,26 +76,26 @@ export function TasksPane({
         minHeight: 0,
         display: 'flex',
         flexDirection: 'column',
-        padding: 8,
+        padding: 12,
         opacity: enabled ? 1 : 0.45,
       }}
     >
-      <div style={{ fontSize: '16px', color: 'var(--pixel-text)', marginBottom: 6, flexShrink: 0 }}>
+      <div style={{ fontSize: '22px', color: 'var(--pixel-text)', marginBottom: 8, flexShrink: 0 }}>
         Tasks Pane
       </div>
       {socketStatus !== 'open' && (
-        <div style={{ fontSize: '12px', color: 'var(--pixel-text-dim)', marginBottom: 4, flexShrink: 0 }}>
+        <div style={{ fontSize: '16px', color: 'var(--pixel-text-dim)', marginBottom: 6, flexShrink: 0 }}>
           {socketStatus === 'connecting' ? 'Connecting to Embers…' : 'Task socket disconnected'}
         </div>
       )}
       {!enabled && (
-        <div style={{ fontSize: '12px', color: 'var(--pixel-text-dim)', marginBottom: 4, flexShrink: 0 }}>
+        <div style={{ fontSize: '16px', color: 'var(--pixel-text-dim)', marginBottom: 6, flexShrink: 0 }}>
           Select an Ember to send work
         </div>
       )}
-      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 6 }}>
+      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 8 }}>
         {log.length === 0 ? (
-          <div style={{ fontSize: '13px', color: 'var(--pixel-text-dim)', padding: 4 }}>
+          <div style={{ fontSize: '17px', color: 'var(--pixel-text-dim)', padding: 6 }}>
             No task events yet
           </div>
         ) : (
@@ -112,22 +112,22 @@ export function TasksPane({
                 key={row.id}
                 style={{
                   display: 'flex',
-                  gap: 6,
-                  padding: 6,
+                  gap: 8,
+                  padding: 8,
                   borderLeft: `3px solid ${rowAccent(row)}`,
                   background: 'var(--pixel-btn-bg)',
                 }}
               >
                 <EmberPortrait character={ch} name={name} />
                 <div style={{ minWidth: 0, flex: 1 }}>
-                  <div style={{ fontSize: '11px', color: rowAccent(row), textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '14px', color: rowAccent(row), textTransform: 'uppercase' }}>
                     {row.direction === 'out' ? 'out' : 'in'} · {typeLabel(row)}
                     {row.status === 'pending' && row.direction === 'out' ? ' · pending' : ''}
                     {row.status === 'acked' && row.direction === 'out' ? ' · accepted' : ''}
                     {row.status === 'queued' && row.direction === 'out' ? ' · queued' : ''}
                     {row.status === 'error' && row.direction === 'out' ? ' · rejected' : ''}
                   </div>
-                  <div style={{ fontSize: '13px', color: 'var(--pixel-text)', wordBreak: 'break-word' }}>
+                  <div style={{ fontSize: '18px', color: 'var(--pixel-text)', wordBreak: 'break-word', lineHeight: 1.4 }}>
                     {row.summary}
                   </div>
                   {row.artifacts && row.artifacts.length > 0 && (
@@ -147,8 +147,8 @@ export function TasksPane({
                           onClick={() => { void openArtifact(artifact) }}
                           style={{
                             flexShrink: 0,
-                            padding: '2px 6px',
-                            fontSize: '12px',
+                            padding: '4px 8px',
+                            fontSize: '15px',
                             background: 'var(--pixel-btn-bg)',
                             color: 'var(--pixel-text)',
                             border: '2px solid var(--pixel-border)',
@@ -169,8 +169,8 @@ export function TasksPane({
                           disabled={!enabled || socketStatus !== 'open'}
                           onClick={() => onAnswer(option)}
                           style={{
-                            padding: '2px 6px',
-                            fontSize: '12px',
+                            padding: '4px 8px',
+                            fontSize: '15px',
                             background: 'var(--pixel-btn-bg)',
                             color: 'var(--pixel-text)',
                             border: '2px solid var(--pixel-border)',
@@ -189,7 +189,7 @@ export function TasksPane({
         )}
       </div>
       <form
-        style={{ display: 'flex', gap: 4, marginTop: 6, flexShrink: 0 }}
+        style={{ display: 'flex', gap: 8, marginTop: 10, flexShrink: 0 }}
         onSubmit={(e) => {
           e.preventDefault()
           submit()
@@ -214,14 +214,14 @@ export function TasksPane({
           }
           style={{
             flex: 1,
-            minHeight: 52,
+            minHeight: 88,
             resize: 'none',
             background: 'var(--pixel-btn-bg)',
             color: 'var(--pixel-text)',
             border: '2px solid var(--pixel-border)',
             borderRadius: 0,
-            padding: 6,
-            fontSize: '13px',
+            padding: 10,
+            fontSize: '18px',
             outline: 'none',
           }}
         />
@@ -230,11 +230,11 @@ export function TasksPane({
           disabled={!canSend}
           style={{
             alignSelf: 'stretch',
-            padding: '0 8px',
-            fontSize: '14px',
-            background: 'var(--pixel-agent-bg)',
-            color: 'var(--pixel-agent-text)',
-            border: '2px solid var(--pixel-agent-border)',
+            padding: '0 16px',
+            fontSize: '18px',
+            background: 'var(--pixel-brand-bg)',
+            color: 'var(--pixel-brand-text)',
+            border: '2px solid var(--pixel-brand)',
             cursor: canSend ? 'pointer' : 'default',
             opacity: canSend ? 1 : 0.4,
           }}
@@ -243,7 +243,7 @@ export function TasksPane({
         </button>
       </form>
       {selectedId !== null && getBackendId(selectedId) === null && enabled && (
-        <div style={{ fontSize: '12px', color: '#ff8a8a', marginTop: 4 }}>
+        <div style={{ fontSize: '16px', color: '#ff8a8a', marginTop: 6 }}>
           Could not find this Ember in the catalog
         </div>
       )}

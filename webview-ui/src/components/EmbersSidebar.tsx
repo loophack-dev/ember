@@ -18,8 +18,8 @@ interface EmbersSidebarProps {
 }
 
 const rowBtn: React.CSSProperties = {
-  padding: '2px 6px',
-  fontSize: '14px',
+  padding: '4px 8px',
+  fontSize: '16px',
   background: 'var(--pixel-btn-bg)',
   color: 'var(--pixel-text)',
   border: '2px solid transparent',
@@ -61,7 +61,7 @@ export function EmbersSidebar({
   return (
     <aside
       style={{
-        width: '20%',
+        width: '30%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -81,8 +81,8 @@ export function EmbersSidebar({
       >
         <div
           style={{
-            padding: '8px 10px 6px',
-            fontSize: '20px',
+            padding: '10px 14px 8px',
+            fontSize: '24px',
             color: 'var(--pixel-text)',
             borderBottom: '1px solid var(--pixel-border)',
             flexShrink: 0,
@@ -92,7 +92,7 @@ export function EmbersSidebar({
         </div>
         <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: 6 }}>
           {rows.length === 0 ? (
-            <div style={{ padding: 8, fontSize: '14px', color: 'var(--pixel-text-dim)' }}>
+            <div style={{ padding: 8, fontSize: '17px', color: 'var(--pixel-text-dim)' }}>
               No Embers in the office
             </div>
           ) : (
@@ -136,7 +136,7 @@ export function EmbersSidebar({
                       />
                       <span
                         style={{
-                          fontSize: '15px',
+                          fontSize: '18px',
                           color: 'var(--pixel-text)',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
@@ -149,7 +149,7 @@ export function EmbersSidebar({
                     {role ? (
                       <div
                         style={{
-                          fontSize: '13px',
+                          fontSize: '16px',
                           color: 'var(--pixel-text-dim)',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',

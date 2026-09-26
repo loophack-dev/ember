@@ -24,6 +24,6 @@
 
 ## 5. Check (user runs the app)
 
-- [ ] 5.1 Idle / waiting / working dots match gray / blue / yellow on the label and the list
-- [ ] 5.2 Busy Embers sit; idle Embers stand; Edit / Move / Fire stay off while busy; selection still works
-- [ ] 5.3 A finish with files shows titled buttons that open (and refresh if needed)
+- [x] 5.1 Idle / waiting / working dots match gray / blue / yellow on the label and the list
+- [x] 5.2 Busy Embers sit; idle Embers stand; Edit / Move / Fire stay off while busy; selection still works
+- [x] 5.3 A finish with files shows titled buttons that open (and refresh if needed)

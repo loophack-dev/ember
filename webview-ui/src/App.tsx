@@ -23,6 +23,7 @@ import { ZoomControls } from './components/ZoomControls.js'
 import { BottomToolbar } from './components/BottomToolbar.js'
 import { DebugView } from './components/DebugView.js'
 import { EmbersSidebar } from './components/EmbersSidebar.js'
+import { BrandHeader } from './components/BrandHeader.js'
 
 // Game state lives outside React — updated imperatively by message handlers
 const officeStateRef = { current: null as OfficeState | null }
@@ -322,7 +323,7 @@ function App() {
   }
 
   return (
-    <div style={{ width: '100%', height: '100%', display: 'flex', overflow: 'hidden' }}>
+    <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <style>{`
         @keyframes pixel-agents-pulse {
           0%, 100% { opacity: 1; }
@@ -331,7 +332,10 @@ function App() {
         .pixel-agents-pulse { animation: pixel-agents-pulse ${PULSE_ANIMATION_DURATION_SEC}s ease-in-out infinite; }
       `}</style>
 
-      <div ref={containerRef} style={{ width: '80%', height: '100%', position: 'relative', overflow: 'hidden' }}>
+      <BrandHeader />
+
+      <div style={{ flex: 1, minHeight: 0, display: 'flex', overflow: 'hidden' }}>
+      <div ref={containerRef} style={{ width: '70%', height: '100%', position: 'relative', overflow: 'hidden' }}>
       <OfficeCanvas
         officeState={officeState}
         onClick={handleClick}
@@ -511,6 +515,7 @@ function App() {
         onEdit={handleEditAgent}
         onFire={requestFire}
       />
+      </div>
     </div>
   )
 }

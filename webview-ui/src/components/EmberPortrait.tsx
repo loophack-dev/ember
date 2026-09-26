@@ -7,9 +7,10 @@ import { getCachedSprite } from '../office/sprites/spriteCache.js'
 interface EmberPortraitProps {
   character: Character | undefined
   name: string
+  size?: number
 }
 
-export function EmberPortrait({ character, name }: EmberPortraitProps) {
+export function EmberPortrait({ character, name, size = 36 }: EmberPortraitProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [showSprite, setShowSprite] = useState(false)
   const initial = (name.trim()[0] || 'E').toUpperCase()
@@ -48,8 +49,8 @@ export function EmberPortrait({ character, name }: EmberPortraitProps) {
   return (
     <div
       style={{
-        width: 28,
-        height: 28,
+        width: size,
+        height: size,
         borderRadius: '50%',
         overflow: 'hidden',
         flexShrink: 0,
@@ -71,7 +72,7 @@ export function EmberPortrait({ character, name }: EmberPortraitProps) {
         }}
       />
       {!showSprite && (
-        <span style={{ fontSize: 14, color: 'var(--pixel-text)' }}>{initial}</span>
+        <span style={{ fontSize: Math.round(size * 0.5), color: 'var(--pixel-text)' }}>{initial}</span>
       )}
     </div>
   )
