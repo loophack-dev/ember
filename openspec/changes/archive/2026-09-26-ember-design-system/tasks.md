@@ -18,5 +18,5 @@
 
 ## 4. Check (user runs the app)
 
-- [ ] 4.1 Tab shows Ember + flame favicon; header logo is at the top
-- [ ] 4.2 Right rail is ~30% wide and Tasks Pane text is readable
+- [x] 4.1 Tab shows Ember + flame favicon; header logo is at the top
+- [x] 4.2 Right rail is ~30% wide and Tasks Pane text is readable
